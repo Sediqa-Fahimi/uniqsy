@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
     def require_login
-        redirect_to new_session_url unless logged_in?
+        render json: ["Page Not Found"], status: 404 unless logged_in?
     end
     def logged_in?
         !!current_user
