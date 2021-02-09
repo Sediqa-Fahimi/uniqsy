@@ -1,5 +1,5 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
+import GreetingContainer from './greeting/greeting_container';
 import Modal from './modal/modal';
 import { Link, Route } from 'react-router-dom';
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
                 </Link>
                 <GreetingContainer />
             </header>
+            
         </div>
     );
 };
