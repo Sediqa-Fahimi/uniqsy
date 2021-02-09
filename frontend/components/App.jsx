@@ -4,12 +4,10 @@ import Modal from './modal/modal';
 import { Link, Route } from 'react-router-dom';
 const App = () => {
     return (
-        <div>
+        <div className="main-header">
             <Modal />
-            <header>
-                <Link to='/'>
-                    <h1>Uniqsy</h1>
-                </Link>
+            <header className="inner-header">
+                <Link to='/' className="icon">Uniqsy</Link>
                 <GreetingContainer />
             </header>
             
