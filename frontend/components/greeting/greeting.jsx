@@ -10,10 +10,10 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         </nav>
     );
     const personalGreeting = () => (
-        <hgroup className="header-group">
+        <div className="header-greeting">
             <h2 className="header-name">Hi, {currentUser.first_name}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
-        </hgroup>
+            <button className="logout-btn" onClick={logout}>Log out</button>
+        </div>
     );
 
     return (

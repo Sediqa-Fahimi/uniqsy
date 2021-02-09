@@ -18,4 +18,6 @@
 
 @import "base/layout.scss";
 
+@import "components/app.scss";
 @import "components/modal.scss";
+@import "components/greeting.scss";
