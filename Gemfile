@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
   gem 'bcrypt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+  gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,7 +50,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery-rails'
+
 end
 
 group :test do
