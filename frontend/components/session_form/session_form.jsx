@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
                             </label>
                         </div>
                         <div>
-                            <input className="session-submit" type="submit" value={this.props.formType} />
+                            <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
                         </div>
                     </div>
                     <button onClick={this.handleGuest}>Guest demo</button>
