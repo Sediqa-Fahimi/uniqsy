@@ -1,7 +1,8 @@
 .login-form-box{
     border: 1px solid red;
     height: 95%;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     line-height: 32px;
 }
 .login-form-container{
@@ -18,11 +19,15 @@
 .register-btn{
     width: 80px;
     height: 35px;
-    border: 2px solid black;
+    border: 2px solid rgb(12, 12, 12);
+    transition: all .005s;
 }
 .register-btn:hover{
-    border: 3px solid black;
-    width: 81px;
+    border: 2.5px solid rgb(12, 12, 12);
+    box-shadow: 0 0 10px rgb(189, 185, 185);
+    transform: scale(1.028);
+    opacity: 1;
+    backface-visibility: hidden;
 }
 /////////////////////
 .login-form-header h2{
@@ -40,18 +45,13 @@
     display: inline-block;
     font-weight: normal;
     border: 1px solid gold;
-    // float: left;
-    // clear: left;
     width: 100%;
-    // text-align: left;
 }
 .login-form input{
     display: inline-block;
     border: 1px solid rgb(222,222,222);
     width: 100%;
     border-radius: 5px;
-    // 
-    // float: left;
 }
 .login-input:hover {
     border: 1px solid rgb(174, 167, 167);
@@ -62,10 +62,48 @@
     // box-shadow: 0 0 10px rgb(157, 153, 153);
 }
 .session-submit{
-    background: black;
-    color: whitesmoke;
+    background:rgb(34,35,35);
+    color: white;
     text-align: center;
     border-radius: 300px;
     width: 100%;
     height: 50px;
+    margin-top: 20px;
+    font-size: 14px;
+    transition: all .005s ease-in-out;
+}
+.guest-submit{
+    background: white;
+    color: rgb(14, 11, 11);
+    text-align: center;
+    border-radius: 300px;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border: 2px solid rgb(12, 12, 12);
+    font-size: 14px;
+    font-weight: bold;
+    transition: all .005s ease-in-out;
+}
+.session-submit:hover{
+    background: rgb(44, 45, 45);
+    transform: scale(1.028);
+    opacity: 1;
+    backface-visibility: hidden;
+}
+.guest-submit:hover{
+    border: 2.5px solid rgb(12, 12, 12);
+    transform: scale(1.028);
+    opacity: 1;
+    backface-visibility: hidden;
+}
+.login-form span{
+    border: 1px solid yellowgreen;
+    width: 80%;
+    display: block;
+    font-size: 14px;
+    color: rgb(94, 90, 90);
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 30px;
 }
