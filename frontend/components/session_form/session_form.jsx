@@ -48,6 +48,7 @@ class SessionForm extends React.Component {
 
     render() {
         const title = this.props.formType === 'Sign in' ? "Sign in" : "Create your account";
+        const subtitle = this.props.formType === 'Sign in' ? "" : "Registeration is easy.";
         const fName = this.props.formType === 'Register' ? (
             <label>First name
                 <input type="text" value={this.state.first_name} 
@@ -58,9 +59,11 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <h2>{title}</h2>
-                    {this.props.otherForm}
-                    
+                    <div className="login-form-header">
+                        <h2>{title}</h2>
+                        {this.props.otherForm}
+                    </div>
+                    <h3>{subtitle}</h3>
                     {this.renderErrors()}
                     <div className="login-form">
                         

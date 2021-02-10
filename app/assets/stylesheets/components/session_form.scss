@@ -2,9 +2,36 @@
     border: 1px solid red;
     height: 95%;
     margin: 20px;
+    line-height: 32px;
 }
 .login-form-container{
     border: 1px solid yellow;
     margin-top: 30px;
     height: 90%;
+}
+.login-form-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+//login_form_container
+.register-btn{
+    width: 80px;
+    height: 35px;
+    border: 2px solid black;
+}
+.register-btn:hover{
+    border: 3px solid black;
+    width: 81px;
+}
+/////////////////////
+.login-form-header h2{
+    font-size: 20px;
+}
+.login-form-box h3{
+    font-size: 15px;
+}
+.login-form{
+    border: 1px solid green;
+    height: 70%;
 }
