@@ -35,3 +35,23 @@
     border: 1px solid green;
     height: 70%;
 }
+.login-form label{
+    display: inline-block;
+    font-weight: normal;
+    border: 1px solid gold;
+    // float: left;
+    // clear: left;
+    width: 100%;
+    // text-align: left;
+}
+.login-form input{
+    display: inline-block;
+    border: 1px solid rgb(222,222,222);
+    width: 100%;
+    border-radius: 5px;
+    // 
+    // float: left;
+}
+.login-input:hover {
+    border: 1px solid rgb(174, 167, 167);
+}

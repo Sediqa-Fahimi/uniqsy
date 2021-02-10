@@ -51,9 +51,12 @@ class SessionForm extends React.Component {
         const subtitle = this.props.formType === 'Sign in' ? "" : "Registeration is easy.";
         const fName = this.props.formType === 'Register' ? (
             <label>First name
-                <input type="text" value={this.state.first_name} 
-                onChange={this.update('first_name')} 
-                className='login-input'/>
+                <div>
+                    <input type="text" value={this.state.first_name} 
+                    onChange={this.update('first_name')} 
+                    className='login-input'/>
+
+                </div>
             </label>
         ) : ("");
         return (
@@ -66,26 +69,37 @@ class SessionForm extends React.Component {
                     <h3>{subtitle}</h3>
                     {this.renderErrors()}
                     <div className="login-form">
-                        
-                        <label>Email address
-                            <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                            />
-                        </label>
-                    
-                        {fName}
-                        
-                        <label>Password
-                            <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                    
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <div>
+                            <label>Email address
+                                <div>   
+
+                                    <input type="text"
+                                        value={this.state.email}
+                                        onChange={this.update('email')}
+                                        className="login-input"
+                                        autoFocus="autofocus"
+                                    />
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            {fName}
+                        </div>
+                        <div>
+                            <label>Password
+                                <div>
+                                    <input type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        className="login-input"
+                                    />
+
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <input className="session-submit" type="submit" value={this.props.formType} />
+                        </div>
                     </div>
                     <button onClick={this.handleGuest}>Guest demo</button>
                 </form>
