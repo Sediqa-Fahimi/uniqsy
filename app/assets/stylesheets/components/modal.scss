@@ -4,19 +4,35 @@
    bottom: 0;
    right: 0;
    left: 0;
-   background: rgba(0, 0, 0, 0.7);
+   background: rgba(0, 0, 0, 0.5);
    z-index: 10;
  }
 
  .modal-child {
    position: absolute;
+   border: 1px solid black;
+   width: 28%;
+   height: 30%;
+   border-radius: 30px;
+   background: white;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
  }
  .close-x {
    position: absolute;
-   top: 5px;
-   right: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 33%;
+   right: 33%;
    cursor: pointer;
+   color:white;
+   font-size: 20px;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+ }
+ .close-x:hover{
+   background: silver;
  }

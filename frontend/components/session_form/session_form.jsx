@@ -50,19 +50,20 @@ class SessionForm extends React.Component {
         const title = this.props.formType === 'Sign in' ? "Sign in" : "Create your account";
         const fName = this.props.formType === 'Register' ? (
             <label>First name
-                <input type="text" value={this.state.first_name} onChange={this.update('first_name')} className='login-input'/>
+                <input type="text" value={this.state.first_name} 
+                onChange={this.update('first_name')} 
+                className='login-input'/>
             </label>
         ) : ("");
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <h2>{title}</h2>
-                    <br />
                     {this.props.otherForm}
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                    
                     {this.renderErrors()}
                     <div className="login-form">
-                        <br />
+                        
                         <label>Email address
                             <input type="text"
                                 value={this.state.email}
@@ -70,9 +71,9 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
+                    
                         {fName}
-                        <br/>
+                        
                         <label>Password
                             <input type="password"
                                 value={this.state.password}
@@ -80,7 +81,7 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
+                    
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                     <button onClick={this.handleGuest}>Guest demo</button>
