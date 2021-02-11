@@ -4,6 +4,7 @@
     height: 83%;
 }
 .login-form-container{
+    // border: 1px solid rgb(255, 0, 234);
     padding-top: 65px;
     margin-top: 30px;
     height: 83%;
@@ -115,4 +116,8 @@
 }
 .errors{
     color: rgb(213, 119, 119);
+}
+.login-form-box input[type="text"], input[type="password"]{
+    box-sizing: border-box;
+    padding-left: 10px;
 }
