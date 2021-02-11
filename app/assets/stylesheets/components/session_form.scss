@@ -114,8 +114,12 @@
     text-align: center;
     margin-left: 30px;
 }
-.errors{
-    color: rgb(213, 119, 119);
+.login-form p{
+    color: rgb(166,26,47);
+    .login-input {
+        border: 1px solid rgb(179,56,71);
+        background: rgb(253,220,216);
+    }
 }
 .login-form-box input[type="text"], input[type="password"]{
     box-sizing: border-box;

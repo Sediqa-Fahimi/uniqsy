@@ -11,10 +11,7 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuest = this.handleGuest.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
-    }
-    componentDidMount(){
-        
+        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -29,17 +26,18 @@ class SessionForm extends React.Component {
         this.props.processForm(user).then(this.props.closeModal);
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`} className="errors">
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+        
+    //     return (
+    //         <ul>
+    //             {this.props.errors.map((error, i) => (
+    //                 <li key={`error-${i}`} className="errors">
+    //                     {error}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
     handleGuest(e){
         e.preventDefault();
         const guestUser = {
@@ -52,8 +50,12 @@ class SessionForm extends React.Component {
 
     render() {
         const title = this.props.formType === 'Sign in' ? "Sign in" : "Create your account";
-        const subtitle = this.props.formType === 'Sign in' ? "" : "Registeration is easy.";
+        const subtitle = this.props.formType === 'Sign in' ? "" : "Registration is easy.";
         const clssNam = this.props.formType === 'Sign in' ? "login-form-container" : "signup-form-container";
+        const err1 = this.props.errors[0];
+        const err2 = this.props.errors[1];
+        const err3 = this.props.formType === 'Sign in' ? this.props.errors[0] : this.props.errors[2];
+        
         const fName = this.props.formType === 'Register' ? (
             <label>First name
                 <div>
@@ -64,7 +66,7 @@ class SessionForm extends React.Component {
                 </div>
             </label>
         ) : ("");
-
+        
         return (
             <div className={clssNam}>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -73,12 +75,10 @@ class SessionForm extends React.Component {
                         {this.props.otherForm}
                     </div>
                     <h3>{subtitle}</h3>
-                    {this.renderErrors()}
                     <div className="login-form">
                         <div>
                             <label>Email address
                                 <div>   
-
                                     <input type="text"
                                         value={this.state.email}
                                         onChange={this.update('email')}
@@ -88,9 +88,11 @@ class SessionForm extends React.Component {
                                 </div>
                             </label>
                         </div>
+                        <p>{err1}</p>
                         <div>
                             {fName}
                         </div>
+                        <p>{err2}</p>
                         <div>
                             <label>Password
                                 <div>
@@ -103,6 +105,7 @@ class SessionForm extends React.Component {
                                 </div>
                             </label>
                         </div>
+                        <p>{err3}</p>
                         <div>
                             <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
                         </div>
