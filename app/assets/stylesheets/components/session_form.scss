@@ -56,7 +56,7 @@
 }
 .login-form input{
     display: inline-block;
-    border: 1px solid rgb(222,222,222); //I think this color has higher specificity??maybe??
+    border: 1px solid rgb(222,222,222); //this color applies even for errored-inputs.
     width: 100%;
     border-radius: 5px;
 }
@@ -75,7 +75,8 @@
     border: 1px solid rgb(179,56,71);
 }
 .errored-input {
-    border: 1px solid rgb(223,152,157); //this doesnt apply for some reason!?!?
+    border: 1px solid rgb(223,152,157); //this doesnt apply for some reason!?!? 
+    //works when I use !important(but then the hover/focus effects wont work).
     background: rgb(253,220,216); // this one does apply.
 }
 .session-submit{

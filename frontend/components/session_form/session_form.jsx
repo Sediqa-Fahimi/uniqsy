@@ -22,6 +22,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // e.stopPropagation();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal);
     }
@@ -107,11 +108,11 @@ class SessionForm extends React.Component {
                         </div>
                         <p>{err3}</p>
                         <div>
-                            <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
+                            <button type="submit" className="session-submit" value={this.props.formType}>{this.props.formType}</button>
                         </div>
                         <div>
                             <span>OR</span>
-                            <button onClick={this.handleGuest} className="guest-submit">Guest Demo</button>
+                            <button type="button" onClick={this.handleGuest} className="guest-submit">Guest Demo</button>
                         </div>
                     </div>
                 </form>
