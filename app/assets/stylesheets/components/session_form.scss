@@ -1,3 +1,13 @@
+.signup-form-container{
+    // border: 1px solid rgb(255, 0, 234);
+    margin-top: 30px;
+    height: 83%;
+}
+.login-form-container{
+    padding-top: 65px;
+    margin-top: 30px;
+    height: 83%;
+}
 .login-form-box{
     // border: 1px solid red;
     height: 95%;
@@ -5,17 +15,13 @@
     margin-right: 20px;
     line-height: 32px;
 }
-.login-form-container{
-    // border: 1px solid yellow;
-    margin-top: 30px;
-    height: 90%;
-}
 .login-form-header{
+    // border: 1px solid olive;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
-//login_form_container
+//login_form_container.jsx
 .register-btn{
     width: 80px;
     height: 35px;
@@ -106,4 +112,7 @@
     margin-top: 20px;
     text-align: center;
     margin-left: 30px;
+}
+.errors{
+    color: rgb(213, 119, 119);
 }

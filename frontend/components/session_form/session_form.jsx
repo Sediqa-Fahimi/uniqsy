@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className="errors">
                         {error}
                     </li>
                 ))}
@@ -49,6 +49,7 @@ class SessionForm extends React.Component {
     render() {
         const title = this.props.formType === 'Sign in' ? "Sign in" : "Create your account";
         const subtitle = this.props.formType === 'Sign in' ? "" : "Registeration is easy.";
+        const clssNam = this.props.formType === 'Sign in' ? "login-form-container" : "signup-form-container";
         const fName = this.props.formType === 'Register' ? (
             <label>First name
                 <div>
@@ -59,8 +60,9 @@ class SessionForm extends React.Component {
                 </div>
             </label>
         ) : ("");
+
         return (
-            <div className="login-form-container">
+            <div className={clssNam}>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form-header">
                         <h2>{title}</h2>
