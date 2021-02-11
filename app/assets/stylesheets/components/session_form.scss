@@ -56,7 +56,7 @@
 }
 .login-form input{
     display: inline-block;
-    border: 1px solid rgb(222,222,222);
+    border: 1px solid rgb(222,222,222); //I think this color has higher specificity??maybe??
     width: 100%;
     border-radius: 5px;
 }
@@ -66,7 +66,17 @@
 .login-input:focus{
     outline: none;
     border: 1px solid black;
-    // box-shadow: 0 0 10px rgb(157, 153, 153);
+}
+.errored-input:hover {
+    border: 1px solid rgb(179,56,71);
+}
+.errored-input:focus{
+    outline: none;
+    border: 1px solid rgb(179,56,71);
+}
+.errored-input {
+    border: 1px solid rgb(223,152,157); //this doesnt apply for some reason!?!?
+    background: rgb(253,220,216); // this one does apply.
 }
 .session-submit{
     background:rgb(34,35,35);
@@ -116,11 +126,10 @@
 }
 .login-form p{
     color: rgb(166,26,47);
-    .login-input {
-        border: 1px solid rgb(179,56,71);
-        background: rgb(253,220,216);
-    }
+    
 }
+
+
 .login-form-box input[type="text"], input[type="password"]{
     box-sizing: border-box;
     padding-left: 10px;

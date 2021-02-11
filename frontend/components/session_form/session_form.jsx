@@ -55,13 +55,13 @@ class SessionForm extends React.Component {
         const err1 = this.props.errors[0];
         const err2 = this.props.errors[1];
         const err3 = this.props.formType === 'Sign in' ? this.props.errors[0] : this.props.errors[2];
-        
+        const inptClsNam = this.props.errors.length === 0 ? "login-input" : "errored-input";
         const fName = this.props.formType === 'Register' ? (
             <label>First name
                 <div>
                     <input type="text" value={this.state.first_name} 
                     onChange={this.update('first_name')} 
-                    className='login-input'/>
+                    className={inptClsNam}/>
 
                 </div>
             </label>
@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
                                     <input type="text"
                                         value={this.state.email}
                                         onChange={this.update('email')}
-                                        className="login-input"
+                                        className={inptClsNam}
                                         autoFocus="autofocus"
                                     />
                                 </div>
@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
                                     <input type="password"
                                         value={this.state.password}
                                         onChange={this.update('password')}
-                                        className="login-input"
+                                        className={inptClsNam}
                                     />
 
                                 </div>
