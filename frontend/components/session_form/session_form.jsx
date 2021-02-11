@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuest = this.handleGuest.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+    }
+    componentDidMount(){
+        
     }
 
     update(field) {
