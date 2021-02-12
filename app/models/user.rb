@@ -3,6 +3,9 @@ class User < ApplicationRecord
     validates :password_digest, :first_name, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
+    has_many :products,
+    foreign_key: :seller_id,
+    class_name: :Product
   
     attr_reader :password
 
