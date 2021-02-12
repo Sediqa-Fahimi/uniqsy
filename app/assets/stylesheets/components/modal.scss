@@ -82,6 +82,10 @@
    left: 50%;
   //  border: 1px solid red;
    transform: translate(-50%, -50%);
+
+   &-reverse {
+    animation-name: slideDown;
+   }
  }
 
 .modal-child-reverse{

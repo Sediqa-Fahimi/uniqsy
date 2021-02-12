@@ -41,7 +41,7 @@ class Modal extends React.Component{
         }
         return (
             <div className={`modal-background${transition}`} onClick={this.modalCloseTransition}>
-                <div className="modal-container">
+                <div className={`modal-container${transition}`} >
                     <div className={`modal-child${transition}`} onClick={e => e.stopPropagation()}>
                         {component}
                     </div>
