@@ -11,6 +11,26 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuest = this.handleGuest.bind(this);
+        this.handleKeyUp = this.handleKeyUp.bind(this);
+    }
+    componentDidMount(){
+        window.addEventListener("keyup", this.handleKeyUp, false);
+    }
+    componentWillUnmount(){
+        window.removeEventListener("keyup", this.handleKeyUp, false);
+    }
+    handleKeyUp(e){
+        const {closeModal} = this.props;
+        const keys = {
+            27: ()=>{
+                e.preventDefault();
+                closeModal();
+                window.removeEventListener("keyup", this.handleKeyUp, false);
+            }
+        };
+        if (keys[e.keyCode]){
+            keys[e.keyCode]();
+        }
     }
 
     update(field) {
