@@ -67,14 +67,14 @@
     outline: none;
     border: 1px solid black;
 }
-.errored-input:hover {
+.login-form .errored-input:hover {
     border: 1px solid rgb(179,56,71);
 }
-.errored-input:focus{
+.login-form .errored-input:focus{
     outline: none;
     border: 1px solid rgb(179,56,71);
 }
-.errored-input {
+.login-form .errored-input {
     border: 1px solid rgb(223,152,157); //this doesnt apply for some reason!?!? 
     //works when I use !important(but then the hover/focus effects wont work).
     background: rgb(253,220,216); // this one does apply.

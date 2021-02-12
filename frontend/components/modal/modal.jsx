@@ -1,35 +1,82 @@
 import React from 'react';
-import { closeModal, } from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+class Modal extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            modalTransitioning: false
+        }
+        this.modalCloseTransition = this.modalCloseTransition.bind(this);
+    }
+    modalCloseTransition(){
+        this.setState({modalTransitioning: true},()=>{
+            setTimeout(()=>{
+                this.props.closeModal();
+                this.setState({modalTransitioning: false});
+            },200);
+        });
+    }
 
-function Modal({ modal, closeModal }) {
-    if (!modal) {
-        return null;
-    }
-    let component;
-    switch (modal) {
-        case 'login':
-            component = <LoginFormContainer />;
-            break;
-        case 'signup':
-            component = <SignupFormContainer />;
-            break;
-        default:
+    render(){
+        const transition = this.state.modalTransitioning ? "-reverse" : "";
+        const modal = this.props.modal;
+        const closeModal = this.props.closeModal;
+        if (!modal) {
             return null;
-    }
-    return (
-        <div className="modal-background" onClick={closeModal}>
-            <div className="modal-container">
-                <div className="modal-child" onClick={e => e.stopPropagation()}>
-                    {component}
+        }
+        let component;
+        switch (modal) {
+            case 'login':
+                component = <LoginFormContainer closeModal={this.modalCloseTransition}/>;
+                break;
+            case 'signup':
+                component = <SignupFormContainer closeModal={this.modalCloseTransition}/>;
+                break;
+            default:
+                return null;
+        }
+        return (
+            <div className={`modal-background${transition}`} onClick={this.modalCloseTransition}>
+                <div className="modal-container">
+                    <div className={`modal-child${transition}`} onClick={e => e.stopPropagation()}>
+                        {component}
+                    </div>
+                    <div onClick={this.modalCloseTransition} className="close-x"><span>X</span></div>
                 </div>
-                <div onClick={closeModal} className="close-x"><span>X</span></div>
             </div>
-        </div>
-    );
+        );
+    }
 }
+
+// function Modal({ modal, closeModal }) {
+//     if (!modal) {
+//         return null;
+//     }
+//     let component;
+//     switch (modal) {
+//         case 'login':
+//             component = <LoginFormContainer />;
+//             break;
+//         case 'signup':
+//             component = <SignupFormContainer />;
+//             break;
+//         default:
+//             return null;
+//     }
+//     return (
+//         <div className="modal-background" onClick={closeModal}>
+//             <div className="modal-container">
+//                 <div className="modal-child" onClick={e => e.stopPropagation()}>
+//                     {component}
+//                 </div>
+//                 <div onClick={closeModal} className="close-x"><span>X</span></div>
+//             </div>
+//         </div>
+//     );
+// }
 
 const mapStateToProps = state => {
     return {

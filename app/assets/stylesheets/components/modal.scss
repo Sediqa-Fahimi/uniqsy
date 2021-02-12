@@ -6,7 +6,35 @@
    left: 0;
    background: rgba(0, 0, 0, 0.4);
    z-index: 10;
+   animation-name: fadeIn;
+   animation-duration: 350ms;
+
+   &-reverse {
+    //  animation-name: fadeOut;
+    animation: fadeOut 25s;
+   }
  }
+
+
+ @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+ @keyframes fadeOut {
+  from {
+    opacity: 1;
+    z-index: 10;
+   }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
 
  .modal-child {
    position: absolute;
@@ -18,7 +46,19 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   animation-name: slideUp;
+   animation-duration: 350ms;
  }
+ @keyframes slideUp {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 50%; 
+  }
+}
  .close-x {
    position: absolute;
    display: flex;
@@ -45,3 +85,27 @@
   //  border: 1px solid red;
    transform: translate(-50%, -50%);
  }
+
+.modal-child-reverse{
+  position: absolute;
+  //  border: 1px solid black;
+   width: 350px;
+   height: 600px;
+   border-radius: 30px;
+   background: white;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   animation-name: slideDown;
+   animation-duration: 350ms;
+}
+ @keyframes slideDown {
+  from {
+     opacity: 1;
+     top: 50%; 
+   }
+  to {
+    opacity: 0;
+    top: 100%;
+  }
+}

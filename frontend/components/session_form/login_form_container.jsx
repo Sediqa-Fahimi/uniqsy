@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { login } from '../../actions/session_actions';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
@@ -20,8 +20,7 @@ const mapDispatchToProps = dispatch => {
             <button type="button" onClick={() => dispatch(openModal('signup'))} className="register-btn">
                 Register
             </button>
-        ),
-        closeModal: () => dispatch(closeModal())
+        )
     };
 };
 
