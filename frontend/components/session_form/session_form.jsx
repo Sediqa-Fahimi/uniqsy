@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
         const guestUser = {
             email: 'myguest@test.com',
             first_name: 'Guest',
-            password: '456789'
+            password: 'quietgame51'
         };
         this.props.login(guestUser).then(this.props.closeModal);
     }
