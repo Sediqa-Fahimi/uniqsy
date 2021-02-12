@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProductIndexItem from './bench_index_item';
+import ProductIndexItem from './product_index_item';
 
 class ProductIndex extends React.Component{
     constructor(props){
