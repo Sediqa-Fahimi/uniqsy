@@ -1,11 +1,23 @@
 import React from 'react';
 
-const ProductIndex = (props) => {
+import ProductIndexItem from './bench_index_item';
+
+class ProductIndex extends React.Component{
+    
+}
+
+const ProductIndex = ({ products, fetchProducts }) => {
     return (
-        <section >
-            <h1>Products will appear here</h1>
-        </section>
-    );
-};
+        <div>
+            <h1>Products</h1>
+            {products.map(product => {
+                return <ProductIndexItem product={product} />
+            }}
+        </div>
+    )
+
+}
+ 
+
 
 export default ProductIndex;
