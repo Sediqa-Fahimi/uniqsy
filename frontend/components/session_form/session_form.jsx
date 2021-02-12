@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuest = this.handleGuest.bind(this);
-        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -22,23 +21,10 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // e.stopPropagation();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal);
     }
 
-    // renderErrors() {
-        
-    //     return (
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`error-${i}`} className="errors">
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
     handleGuest(e){
         e.preventDefault();
         const guestUser = {

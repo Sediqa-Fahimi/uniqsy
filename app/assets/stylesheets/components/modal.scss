@@ -10,11 +10,9 @@
    animation-duration: 350ms;
 
    &-reverse {
-    //  animation-name: fadeOut;
-    animation: fadeOut 25s;
+    animation-name: fadeOut;
    }
  }
-
 
  @keyframes fadeIn {
   from {
