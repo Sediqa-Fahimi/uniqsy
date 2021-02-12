@@ -2,7 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import Modal from './modal/modal';
 import { Link, Route, Switch ,Redirect} from 'react-router-dom';
-import ProductIndex from './products/product_index';
+import ProductIndexContainer from './products/product_index_container';
 
 const App = () => {
     return (
@@ -17,7 +17,7 @@ const App = () => {
             </div>
             <Switch>
 
-                <Route exact path="/" component={ProductIndex} />
+                <Route exact path="/" component={ProductIndexContainer} />
                 <Redirect to="/" />
             </Switch>
         </>

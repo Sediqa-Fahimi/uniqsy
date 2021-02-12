@@ -3,19 +3,26 @@ import React from 'react';
 import ProductIndexItem from './bench_index_item';
 
 class ProductIndex extends React.Component{
-    
-}
-
-const ProductIndex = ({ products, fetchProducts }) => {
-    return (
-        <div>
-            <h1>Products</h1>
-            {products.map(product => {
-                return <ProductIndexItem product={product} />
-            }}
-        </div>
-    )
-
+    constructor(props){
+        super(props);
+    }
+    componentDidMount(){
+        this.props.fetchProducts();
+    }
+    render(){
+        const products = this.props.products.map(product => {
+            return (
+                <ProductIndexItem product={product} key={product.id} />
+            )
+        });
+        return(
+            <div>
+                <ul>
+                    {products}
+                </ul>
+            </div>
+        )
+    }
 }
  
 
