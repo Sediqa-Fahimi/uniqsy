@@ -1,11 +1,28 @@
 .inner-header{
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
+    justify-content: space-evenly;
 }
-.icon {
+.home-icon {
     color: rgb(241, 101, 31);
     font-size: 35px;
     font-family: 'Martel', serif;
+    width: 12%;
     padding: 7px;
+}
+// .shopping-cart-link {
+//     display: flex;
+//     justify-content: center;
+//     align-items: baseline;
+// }
+.shopping-cart-icon-container {
+    border: 1px solid red;
+    border-radius: 50%;
+    padding: 8px;
+}
+.shopping-cart-icon {
+    border: 1px solid green;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
 }
