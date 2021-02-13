@@ -21,6 +21,20 @@ const App = () => {
                     </Link>
                 </header>
             </div>
+            <div className="navbar">
+                <ul>
+                    <li><a href="#">Valentine's Day</a></li>
+                    <li><a href="#">Jewelry & Accessories</a></li>
+                    <li><a href="#">Clothing & Shoes</a></li>
+                    <li><a href="#">Home & Living</a></li>
+                    <li><a href="#">Wedding & Party</a></li>
+                    <li><a href="#">Toys & Entertainment</a></li>
+                    <li><a href="#">Art & Collectibles</a></li>
+                    <li><a href="#">Craft Supplies</a></li>
+                    <li><a href="#">Gifts & Gift Cards</a></li>
+                </ul>
+            </div>
+            <div className="nav-bottom-line"></div>
             <Switch>
 
                 <Route exact path="/" component={ProductIndexContainer} />
