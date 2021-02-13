@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import Header from './header';
 import { openModal} from '../../actions/modal_actions';
 
 const mSTP = state => {
@@ -16,4 +16,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(Greeting);
+export default connect(mSTP, mDTP)(Header);

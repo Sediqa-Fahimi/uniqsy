@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-const Greeting = ({ currentUser, logout, openModal }) => {
+const Header = ({ currentUser, logout, openModal }) => {
 
     const sessionLink = () => (
         <nav className="login-signup">
@@ -23,4 +23,4 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     );
 };
 
-export default Greeting;
+export default Header;
