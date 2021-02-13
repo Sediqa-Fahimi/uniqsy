@@ -44,12 +44,42 @@ const App = () => {
             </div>
             <div className="celebrate-images">
                 <ul>
-                    <li><img src={window.giftURL} alt="" className="round-images"/><a href="">Personalized gifts --{'>'}</a></li>
-                    <li><img src={window.necklaceURL} alt="" className="round-images" /><a href="">Necklaces --{'>'}</a></li>
-                    <li><img src={window.cardURL} alt="" className="round-images" /><a href="">Greeting cards --{'>'}</a></li>
-                    <li><img src={window.accessoryURL} alt="" className="round-images" /><a href="">Leather accessories --{'>'}</a></li>
-                    <li><img src={window.wreathURL} alt="" className="round-images" /><a href="">Wreaths --{'>'}</a></li>
-                    <li><img src={window.ringURL} alt="" className="round-images" /><a href="">Engagement rings --{'>'}</a></li>
+                    <li>
+                        <a href="">
+                            <img src={window.giftURL} alt="" className="round-images" />
+                            Personalized gifts --{'>'}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src={window.necklaceURL} alt="" className="round-images" />
+                            Necklaces --{'>'}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src={window.cardURL} alt="" className="round-images" />
+                            Greeting cards --{'>'}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src={window.accessoryURL} alt="" className="round-images" />
+                            Leather accessories --{'>'}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src={window.wreathURL} alt="" className="round-images" />
+                            Wreaths --{'>'}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src={window.ringURL} alt="" className="round-images" />
+                            Engagement rings --{'>'}
+                        </a>
+                    </li>
                 </ul>
             </div>
             <Switch>
