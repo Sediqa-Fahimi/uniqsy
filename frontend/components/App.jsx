@@ -20,7 +20,6 @@ const App = () => {
                         </div>
                     </Link>
                 </header>
-                
             </div>
             <Switch>
 
