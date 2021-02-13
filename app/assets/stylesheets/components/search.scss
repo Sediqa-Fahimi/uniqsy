@@ -19,6 +19,9 @@
 .search-input:focus + .search-btn .search-icon{
     -webkit-filter: invert(100%);
 }
+// .search-input:focus + .search-container:hover{
+//     border: none;
+// }
 
 .search-input {
     padding-left: 18px;
