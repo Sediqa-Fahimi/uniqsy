@@ -19,6 +19,7 @@
 .shopping-cart-icon-container {
     position: relative;
     top: 13px;
+    left: 3px;
     border-radius: 50%;
     padding: 5px;
 }
@@ -49,4 +50,40 @@
 }
 .nav-bottom-line{
     border: 1px solid rgb(222,222,222);
+}
+.celebrate-title {
+    border: none;
+    background: rgb(245,146,184);
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+}
+.celebrate-subtitle{
+    border: none;
+    background: rgb(245,146,184);
+    text-align: center;
+    font-size: 18px;
+    padding-top: 20px;
+}
+.celebrate-images{
+    padding-top: 12px;
+    border: none;
+    background: rgb(245,146,184);
+}
+.celebrate-images > ul{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+// .celebrate-images li{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: baseline;
+// }
+.round-images{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+
 }

@@ -35,6 +35,23 @@ const App = () => {
                 </ul>
             </div>
             <div className="nav-bottom-line"></div>
+            
+            <div className="celebrate-title">
+                <p>Celebrate everyone who makes you feel loved.</p>
+            </div>
+            <div className="celebrate-subtitle">
+                <p>Shop Valentine's Day</p>
+            </div>
+            <div className="celebrate-images">
+                <ul>
+                    <li><img src={window.giftURL} alt="" className="round-images"/><a href="">Personalized gifts --{'>'}</a></li>
+                    <li><img src={window.necklaceURL} alt="" className="round-images" /><a href="">Necklaces --{'>'}</a></li>
+                    <li><img src={window.cardURL} alt="" className="round-images" /><a href="">Greeting cards --{'>'}</a></li>
+                    <li><img src={window.accessoryURL} alt="" className="round-images" /><a href="">Leather accessories --{'>'}</a></li>
+                    <li><img src={window.wreathURL} alt="" className="round-images" /><a href="">Wreaths --{'>'}</a></li>
+                    <li><img src={window.ringURL} alt="" className="round-images" /><a href="">Engagement rings --{'>'}</a></li>
+                </ul>
+            </div>
             <Switch>
 
                 <Route exact path="/" component={ProductIndexContainer} />
