@@ -5,6 +5,10 @@ class Api::ProductsController < ApplicationController
     end
     
     def show
-
+        @product = Product.find_by(id: params[:id])
+        if @product
+            render :show
+        else
+            render json: ["Item does not exist."], status: 404
     end
 end
