@@ -12,7 +12,7 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
     return {
-        fetchProduct: () => dispatch(fetchProduct(ownProps.match.params.productId))
+        fetchProduct: (id) => dispatch(fetchProduct(id))
     }
 }
 

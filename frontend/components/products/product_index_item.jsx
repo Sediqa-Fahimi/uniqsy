@@ -4,17 +4,18 @@ import { withRouter, Link } from 'react-router-dom';
 class ProductIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
-    // handleClick() {
-    //   const productId = this.props.product.id;
-    //   this.props.history.push(`/products/${productId}`);
-    // }
+    handleClick(e) {
+      e.preventDefault();
+      const productId = this.props.product.id;
+      this.props.history.push(`/products/${productId}`);
+    }
     render() {
         const { product } = this.props;
         return (
           <li key={product.id} >
-              <Link to={`/products/${product.id}`}>
+              <Link to={`/products/${product.id}`} onClick={e => this.handleClick}>
                 <img src={window.brentURL} alt=""/>
                 ${product.price}
               </Link>
