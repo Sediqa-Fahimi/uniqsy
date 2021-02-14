@@ -9,9 +9,11 @@ class ProductIndexItem extends React.Component {
     render() {
         const { product } = this.props;
         return (
-          <li key={product.id}>
-              <img src={window.brentURL} alt=""/>
-              <span>${product.price}</span>
+          <li key={product.id} >
+              <a href="#">
+                <img src={window.brentURL} alt=""/>
+                ${product.price}
+              </a>
           </li>
         )
     }

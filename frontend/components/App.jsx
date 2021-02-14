@@ -36,52 +36,7 @@ const App = () => {
             </div>
             <div className="nav-bottom-line"></div>
             
-            <div className="celebrate-title">
-                <p>Celebrate everyone who makes you feel loved.</p>
-            </div>
-            <div className="celebrate-subtitle">
-                <p>Shop Valentine's Day</p>
-            </div>
-            <div className="celebrate-images">
-                <ul>
-                    <li>
-                        <a href="">
-                            <img src={window.giftURL} alt="" className="round-images" />
-                            Personalized gifts --{'>'}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src={window.necklaceURL} alt="" className="round-images" />
-                            Necklaces --{'>'}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src={window.cardURL} alt="" className="round-images" />
-                            Greeting cards --{'>'}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src={window.accessoryURL} alt="" className="round-images" />
-                            Leather accessories --{'>'}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src={window.wreathURL} alt="" className="round-images" />
-                            Wreaths --{'>'}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src={window.ringURL} alt="" className="round-images" />
-                            Engagement rings --{'>'}
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            
             <Switch>
 
                 <Route exact path="/" component={ProductIndexContainer} />
