@@ -10,5 +10,6 @@ class Api::ProductsController < ApplicationController
             render :show
         else
             render json: ["Item does not exist."], status: 404
+        end
     end
 end

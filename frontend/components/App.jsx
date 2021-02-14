@@ -4,6 +4,7 @@ import Modal from './modal/modal';
 import { Link, Route, Switch ,Redirect} from 'react-router-dom';
 import ProductIndexContainer from './products/product_index_container';
 import SearchContainer from './products/search';
+import ProductShowContainer from './products/product_show_container';
 
 const App = () => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
             
             <Switch>
 
+                <Route path="/products/:productId" component={ProductShowContainer} />
                 <Route exact path="/" component={ProductIndexContainer} />
                 <Redirect to="/" />
             </Switch>
