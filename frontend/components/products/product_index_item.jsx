@@ -7,15 +7,14 @@ class ProductIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(e) {
-      e.preventDefault();
       const productId = this.props.product.id;
       this.props.history.push(`/products/${productId}`);
-    }
+  }
     render() {
         const { product } = this.props;
         return (
           <li key={product.id} >
-              <Link to={`/products/${product.id}`} onClick={e => this.handleClick}>
+              <Link to={`/products/${product.id}`} onClick={()=> this.handleClick}>
                 <img src={window.brentURL} alt=""/>
                 ${product.price}
               </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 // import ProductDetail from './product_detail';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -8,13 +8,13 @@ class ProductShow extends React.Component{
 
     }
     componentDidMount(){
-        const productId = this.props.match.params.productId;
+        const productId = this.props.productId;
         this.props.fetchProduct(productId);
     }
    
     render(){
         const { product } = this.props;
-
+        if (product === undefined) return null;
         return(
             <>
                 <div className="product-show-page group">
@@ -39,4 +39,4 @@ class ProductShow extends React.Component{
         )
     }
 }
-export default ProductShow;
+export default withRouter(ProductShow);
