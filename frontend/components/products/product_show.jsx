@@ -23,14 +23,13 @@ class ProductShow extends React.Component{
                         <div className="image-show-container">
                             <div className="vertical-image-list-container">
                                 <ul className="vertical-image-list">
-                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
-                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
-                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
-                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
-                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
-                                    {/* <li><a href="#"><img src={window.brentURL} alt="" /></a></li> */}
+                                    <li><a ><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a ><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a ><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a ><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a ><img src={window.brentURL} alt="" /></a></li>
                                 </ul>
-                            </div>
+                            </div> 
                             <button>{'<'}</button>
                             <div className="view-image">
                                 <img src={window.brentURL} alt="" />
