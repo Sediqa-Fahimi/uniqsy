@@ -24,14 +24,14 @@ class ProductShow extends React.Component{
                         </section>
                     </div>
                     <div className="col col-1-3">
-                        <aside>
-                            <div>
-                                <ul>
-                                    <li>{product.title}</li>
-                                    <li>{product.price}</li>
-                                    <li>{product.description}</li>
-                                </ul>
-                            </div>
+                        <aside className="aside">
+                            
+                            <h1>{product.title}</h1>
+                            <p>${product.price}</p>
+                            <button className="add-to-cart-btn">Add to cart</button>
+                            <p>Description</p>
+                            <p>{product.description}</p>
+                            
                         </aside>
                     </div>
                 </div>
