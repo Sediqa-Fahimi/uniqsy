@@ -20,9 +20,26 @@ class ProductShow extends React.Component{
             <>
                 <div className="product-show-page group">
                     <div className="col col-2-3">
-                        <section>
-                            <img src={window.brentURL} alt=""/>
-                        </section>
+                        <div className="image-show-container">
+                            <div className="vertical-image-list-container">
+                                <ul className="vertical-image-list">
+                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
+                                    <li><a href="#"><img src={window.brentURL} alt="" /></a></li>
+                                    {/* <li><a href="#"><img src={window.brentURL} alt="" /></a></li> */}
+                                </ul>
+                            </div>
+                            <button>{'<'}</button>
+                            <div className="view-image">
+                                <img src={window.brentURL} alt="" />
+                            </div>
+                            <button>{'>'}</button>
+                        </div>
+
+                        <br/><br/>
+                        <div>Reviews</div>
                     </div>
                     <div className="col col-1-3">
                         <aside className="aside">
