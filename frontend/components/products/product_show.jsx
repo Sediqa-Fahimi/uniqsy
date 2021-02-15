@@ -15,6 +15,7 @@ class ProductShow extends React.Component{
     render(){
         const { product } = this.props;
         if (product === undefined) return null;
+        if (product.seller === undefined) return null;
         return(
             <>
                 <div className="product-show-page group">
@@ -25,7 +26,7 @@ class ProductShow extends React.Component{
                     </div>
                     <div className="col col-1-3">
                         <aside className="aside">
-                            
+                            <p>{product.seller.first_name}</p>
                             <h1>{product.title}</h1>
                             <p>${product.price}</p>
                             <button className="add-to-cart-btn">Add to cart</button>
