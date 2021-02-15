@@ -76,21 +76,21 @@ class ProductIndex extends React.Component{
                     </ul>
                 </div> */}
 
-                <div className="what-is-uniqsy">
+                <div className="what-is-uniqsy group">
                     <h2>What is Uniqsy?</h2>
                     <p><a>Read our wonderfully weird story.</a></p>
-                    <div className="col-container group">
-                        <div className="col col-1-3">
+                    <div className="coll-container clearfix">
+                        <div className="coll coll-1-3">
                             <h3>A one-of-a-kind community</h3>
                             <p>
                                 Uniqsy is a global online marketplace, where people come together to make, sell, buy, and collect unique items.
                             </p>
                         </div>
-                        <div className="col col-1-3">
+                        <div className="coll coll-1-3">
                             <h3>Support independent creators</h3>
                             <p>There’s no Etsy warehouse – just millions of people selling the things they love. We make the whole process easy, helping you connect directly with makers to find something extraordinary.</p>
                         </div>
-                        <div className="col col-1-3">
+                        <div className="coll coll-1-3">
                             <h3>Peace of mind</h3>
                             <p>Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</p>
                         </div>
@@ -99,6 +99,10 @@ class ProductIndex extends React.Component{
                         <h3>Have a question? Well, we’ve got some answers.</h3>
                         <button className="help-btn">Go to Help Center</button>
                     </div>
+
+                    <img src={window.blueCircleURL} alt="" className="blue-circle-png" />
+                    {/* <img src={window.plantURL} alt="" className="plant-design-png" /> */}
+
                 </div>
             </>
         )
