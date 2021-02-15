@@ -18,10 +18,10 @@ class ProductIndex extends React.Component{
         return(
             <>
                 <div className="celebrate-title">
-                    <p>Celebrate everyone who makes you feel loved.</p>
+                    <p>Find things you'll love. Support independent sellers. Only on Uniqsy.</p>
                 </div>
                 <div className="celebrate-subtitle">
-                    <p>Shop Valentine's Day</p>
+                    <p>Everyday finds</p>
                 </div>
                 <div className="celebrate-images">
                     <ul>
@@ -75,6 +75,31 @@ class ProductIndex extends React.Component{
                         {products.slice(0,6)}
                     </ul>
                 </div> */}
+
+                <div className="what-is-uniqsy">
+                    <h2>What is Uniqsy?</h2>
+                    <p><a>Read our wonderfully weird story.</a></p>
+                    <div className="col-container group">
+                        <div className="col col-1-3">
+                            <h3>A one-of-a-kind community</h3>
+                            <p>
+                                Uniqsy is a global online marketplace, where people come together to make, sell, buy, and collect unique items.
+                            </p>
+                        </div>
+                        <div className="col col-1-3">
+                            <h3>Support independent creators</h3>
+                            <p>There’s no Etsy warehouse – just millions of people selling the things they love. We make the whole process easy, helping you connect directly with makers to find something extraordinary.</p>
+                        </div>
+                        <div className="col col-1-3">
+                            <h3>Peace of mind</h3>
+                            <p>Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</p>
+                        </div>
+                    </div>
+                    <div className="question-section">
+                        <h3>Have a question? Well, we’ve got some answers.</h3>
+                        <button className="help-btn">Go to Help Center</button>
+                    </div>
+                </div>
             </>
         )
     }
