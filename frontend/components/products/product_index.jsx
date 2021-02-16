@@ -69,12 +69,49 @@ class ProductIndex extends React.Component{
                         {products.slice(0,6)}
                     </ul>
                 </div>
-                {/* <div className="hand-picked">
-                    <div ><p>Hand-picked for you</p></div>
-                    <ul>
+
+                <div className="hand-picked">
+                    <h1>Discover unique hand-picked items</h1>
+                    <div className="hand-picked-nav">
+                        <ul>
+                            <li><a>Home improvement ideas</a></li>
+                            <li><a>Personalized gifts</a></li>
+                            <li><a>Comfortwear</a></li>
+                            <li><a>Cozy up</a></li>
+                            <li><a>Storage & Organization</a></li>
+                            <li><a>Work from home</a></li>
+                        </ul>
+                    </div>
+                    <div className="hand-picked-images">
+                        <ul>
+                            <div className="large-pics-selected">
+                                {products[6]}
+                            </div>
+                            <li>
+                                <div>
+                                    <ul className="vertical-selected">
+                                        {products[7]}
+                                        {products[8]}
+                                    </ul>
+                                </div>
+                            </li>
+                            <div className="large-pics-selected">
+                                {products[9]}
+                            </div>
+                            <li>
+                                <div>
+                                    <ul className="vertical-selected">
+                                        {products[10]}
+                                        {products[11]}
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* <ul>
                         {products.slice(0,6)}
-                    </ul>
-                </div> */}
+                    </ul> */}
+                </div>
 
                 <div className="what-is-uniqsy group">
                     <h2>What is Uniqsy?</h2>
@@ -101,7 +138,7 @@ class ProductIndex extends React.Component{
                     </div>
 
                     <img src={window.blueCircleURL} alt="" className="blue-circle-png" />
-                    {/* <img src={window.plantURL} alt="" className="plant-design-png" /> */}
+                    
 
                 </div>
             </>
