@@ -64,7 +64,7 @@ class ProductIndex extends React.Component{
                     </ul>
                 </div>
                 <div className="recently-viewed">
-                    <div ><p>Recently viewed</p></div>
+                    <div ><p>Top Picks</p></div>
                     <ul>
                         {products.slice(0,6)}
                     </ul>
