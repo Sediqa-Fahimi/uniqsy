@@ -6,7 +6,9 @@ class User < ApplicationRecord
     has_many :products,
     foreign_key: :seller_id,
     class_name: :Product
-  
+    
+    has_one_attached :image
+    
     attr_reader :password
 
     after_initialize :ensure_session_token
