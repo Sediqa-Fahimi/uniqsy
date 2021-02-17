@@ -16,6 +16,8 @@ class ProductShow extends React.Component{
         const { product } = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
+        if (!product.photoUrl) return null;
+        if (!product.photoUrls) return null;
         return(
             <>
                 <div className="product-show-page group">
@@ -24,10 +26,10 @@ class ProductShow extends React.Component{
                             <div className="vertical-image-list-container">
                                 <ul className="vertical-image-list">
                                     <li><a ><img src={product.photoUrl} alt="" /></a></li>
+                                    <li><a ><img src={product.photoUrls[0]} alt="" /></a></li>
                                     <li><a ><img src={product.photoUrls[1]} alt="" /></a></li>
                                     <li><a ><img src={product.photoUrls[2]} alt="" /></a></li>
                                     <li><a ><img src={product.photoUrls[3]} alt="" /></a></li>
-                                    <li><a ><img src={product.photoUrls[4]} alt="" /></a></li>
                                 </ul>
                             </div> 
                             <button>{'<'}</button>

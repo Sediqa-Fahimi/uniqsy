@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
     end
     
     def show
-        @product = Product.includes(:seller, :photos, :index_photo).find_by(id: params[:id])
+        @product = Product.includes(:seller).with_attached_photos.find_by(id: params[:id])
         if @product
             render :show
         else
