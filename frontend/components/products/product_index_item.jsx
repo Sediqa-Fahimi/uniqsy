@@ -15,7 +15,7 @@ class ProductIndexItem extends React.Component {
         return (
           <li key={product.id} >
               <Link to={`/products/${product.id}`} onClick={()=> this.handleClick}>
-                <img src={window.brentURL} alt=""/>
+                <img src={product.photoUrl} alt=""/>
                 ${product.price}
               </Link>
           </li>

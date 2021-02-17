@@ -66,7 +66,12 @@ class ProductIndex extends React.Component{
                 <div className="recently-viewed">
                     <div ><p>Top Picks</p></div>
                     <ul>
-                        {products.slice(0,6)}
+                        {products[0]}
+                        {products[5]}
+                        {products[8]}
+                        {products[12]}
+                        {products[7]}
+                        {products[3]}
                     </ul>
                 </div>
 
@@ -85,23 +90,23 @@ class ProductIndex extends React.Component{
                     <div className="hand-picked-images">
                         <ul>
                             <div className="large-pics-selected">
-                                {products[6]}
+                                {products[13]}
                             </div>
                             <li>
                                 <div>
                                     <ul className="vertical-selected">
-                                        {products[7]}
-                                        {products[8]}
+                                        {products[18]}
+                                        {products[1]}
                                     </ul>
                                 </div>
                             </li>
                             <div className="large-pics-selected">
-                                {products[9]}
+                                {products[19]}
                             </div>
                             <li>
                                 <div>
                                     <ul className="vertical-selected">
-                                        {products[10]}
+                                        {products[4]}
                                         {products[11]}
                                     </ul>
                                 </div>

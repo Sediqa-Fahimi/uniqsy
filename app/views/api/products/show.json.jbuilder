@@ -3,4 +3,5 @@ json.product do
     json.seller do
         json.extract! @product.seller, :id, :first_name
     end
+    json.photoUrls @product.photos.map { |file| url_for(file) }
 end
