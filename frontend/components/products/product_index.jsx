@@ -69,7 +69,7 @@ class ProductIndex extends React.Component{
                         {products[0]}
                         {products[5]}
                         {products[8]}
-                        {products[12]}
+                        {products[2]}
                         {products[7]}
                         {products[3]}
                     </ul>
@@ -107,7 +107,7 @@ class ProductIndex extends React.Component{
                                 <div>
                                     <ul className="vertical-selected">
                                         {products[4]}
-                                        {products[11]}
+                                        {products[12]}
                                     </ul>
                                 </div>
                             </li>
