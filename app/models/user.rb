@@ -6,6 +6,14 @@ class User < ApplicationRecord
     has_many :products,
     foreign_key: :seller_id,
     class_name: :Product
+
+    has_many :cartitems,
+    foreign_key: :user_id,
+    class_name: :CartItem
+
+    has_many :products,
+    through: :cartitems,
+    source: :product
     
     has_one_attached :image
     
