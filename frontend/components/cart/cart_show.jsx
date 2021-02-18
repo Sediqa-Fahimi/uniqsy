@@ -18,11 +18,11 @@ class CartShow extends React.Component {
                 <CartItem item={item} key={item.id} deleteCartItem={this.props.deleteCartItem}/>
             )
         });
-        let total = 0;
+        let total = 0.0;
         if(this.props.items.length != 0){
-            this.props.items.forEach(item => total += item.price);
+            this.props.items.forEach(item => total += parseFloat(item.price));
         }
-        const checkout = total === 0 ? "" : <>
+        const checkout = total === 0.0 ? "" : <>
                                                 <div>
                                                     <h1>How you'll pay</h1>
                                                     <label className="container"><img src={window.americanexpressURL} alt="" />
