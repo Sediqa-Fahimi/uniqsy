@@ -5,6 +5,7 @@ import { Link, Route, Switch ,Redirect} from 'react-router-dom';
 import ProductIndexContainer from './products/product_index_container';
 import SearchContainer from './products/search';
 import ProductShowContainer from './products/product_show_container';
+import CartShowContainer from './cart/cart_show_container';
 import { connect } from 'react-redux';
 
 // class App extends React.Component{
@@ -90,7 +91,7 @@ export const App = ({ cartItemsLen }) => {
                     <Link to='/' className="home-icon">Uniqsy</Link>
                     <SearchContainer />
                     <HeaderContainer />
-                    <Link to='#' className="shopping-cart-link">
+                    <Link to='/cart' className="shopping-cart-link">
                         <div className="shopping-cart-icon-container">
                             <span className={clsName}>{cartItemsNum}</span>
                             <img src={window.cartURL} alt="" className="shopping-cart-icon" />
@@ -115,6 +116,7 @@ export const App = ({ cartItemsLen }) => {
             
              <Switch>
 
+                 <Route path="/cart" component={CartShowContainer} />
                  <Route path="/products/:productId" component={ProductShowContainer} />
                  <Route exact path="/" component={ProductIndexContainer} />
                  <Redirect to="/" />

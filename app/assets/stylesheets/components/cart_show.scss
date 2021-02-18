@@ -1,0 +1,29 @@
+.cart-show-page{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 15px;
+    // border: 1px solid red;
+}
+.clrfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.cart-col{
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.payment{
+    width: 32%;
+    // border: 1px solid green;
+}
+.content{
+    width: 68%;
+    // border: 1px solid blue;
+}
+
+.item-container img{
+    width: 142px;
+    height: 113px;
+}
