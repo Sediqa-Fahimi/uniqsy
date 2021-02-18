@@ -22,9 +22,10 @@ class CartShow extends React.Component {
         if(this.props.items.length != 0){
             this.props.items.forEach(item => total += item.price);
         }
-        const checkout = total === 0 ? "" : <div>Item(s) total: {total} <button>Proceed to checkout</button></div>
+        const checkout = total === 0 ? "" : <><div>Item(s) total: {total}</div><button className="checkout-btn">Proceed to checkout</button></>
         const len = this.props.items.length;
         const headerMsg = len === 0 ? "Your cart is empty." : `${len} items in your cart.`;
+        const cls = len === 0 ? "no-payment" : "payment-box";
         return (
             <>
                 <div className="cart-show-page clrfix">
@@ -40,7 +41,7 @@ class CartShow extends React.Component {
 
                     </div>
                     <div className="cart-col payment">
-                        <aside className="aside">
+                        <aside className={cls}>
                             {checkout}
                         </aside>
                     </div>
