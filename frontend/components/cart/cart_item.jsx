@@ -19,16 +19,23 @@ class CartItem extends React.Component {
     render() {
         const { item } = this.props;
         return (
-            <li key={item.id} >
-                <span>{item.first_name}</span>
-                <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
-                    <img src={item.photoUrl} alt="" />
-                </Link>
-                <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
-                    <p>{item.title}</p>
-                </Link>
-                <p>${item.price}</p>
-                <button onClick={this.removeItem}>Remove</button>
+            <li key={item.id} className="items-li clrfx">
+                <div className="item-col photo">
+                    <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
+                        <img src={item.photoUrl} alt="" />
+                    </Link>
+
+                </div>
+                <div className="item-col title">
+                    <span>{item.first_name}</span>
+                    <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
+                        <p>{item.title}</p>
+                    </Link>
+                    <button onClick={this.removeItem} className="remove-btn">Remove</button>
+                </div>
+                <div className="item-col price">
+                    <p>${item.price}</p>
+                </div>
             </li>
         )
     }

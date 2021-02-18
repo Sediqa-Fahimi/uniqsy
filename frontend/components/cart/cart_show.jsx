@@ -22,7 +22,25 @@ class CartShow extends React.Component {
         if(this.props.items.length != 0){
             this.props.items.forEach(item => total += item.price);
         }
-        const checkout = total === 0 ? "" : <><div>Item(s) total: {total}</div><button className="checkout-btn">Proceed to checkout</button></>
+        const checkout = total === 0 ? "" : <>
+                                                <div>
+                                                    <h1>How you'll pay</h1>
+                                                    <label className="container"><img src={window.americanexpressURL} alt="" />
+                                                        <input type="radio" defaultChecked name="radio"/>
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                    <label className="container"><img src={window.window.mastercardURL} alt="" />
+                                                        <input type="radio" name="radio"/>
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                    <label className="container"><img src={visaURL} alt="" />
+                                                        <input type="radio" name="radio"/>
+                                                        <span className="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div className="total"><span>Item(s) total:</span><span>${total}</span></div>
+                                                <button className="checkout-btn">Proceed to checkout</button>
+                                            </>
         const len = this.props.items.length;
         const headerMsg = len === 0 ? "Your cart is empty." : `${len} items in your cart.`;
         const cls = len === 0 ? "no-payment" : "payment-box";
@@ -30,7 +48,7 @@ class CartShow extends React.Component {
             <>
                 <div className="cart-show-page clrfix">
                     <div className="cart-col content">
-                        <div>
+                        <div className="cart-title-msg">
                             <p>{headerMsg}</p>
                         </div>
                         <div className="item-container">
