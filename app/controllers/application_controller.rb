@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
     def require_login
-        render json: ["Nobody signed in"], status: 404 unless logged_in?
+        render json: ["Please sign in"], status: 404 unless logged_in?
     end
     def logged_in?
         !!current_user
