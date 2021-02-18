@@ -1,15 +1,19 @@
 import React from 'react';
-// import ProductDetail from './product_detail';
 import { withRouter } from 'react-router-dom';
 
 class ProductShow extends React.Component{
     constructor(props){
         super(props);
+        this.handleClick = this.handleClick.bind(this);
 
     }
     componentDidMount(){
         const productId = this.props.productId;
         this.props.fetchProduct(productId);
+    }
+    handleClick(e){
+        e.preventDefault();
+        this.props.addCartItem({product_id: this.props.productId, user_id: this.props.userId});
     }
    
     render(){
@@ -47,7 +51,7 @@ class ProductShow extends React.Component{
                             <p>{product.seller.first_name}</p>
                             <h1>{product.title}</h1>
                             <p>${product.price}</p>
-                            <button className="add-to-cart-btn">Add to cart</button>
+                            <button className="add-to-cart-btn" onClick={this.handleClick}>Add to cart</button>
                             <p>Description</p>
                             <p>{product.description}</p>
                             

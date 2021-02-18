@@ -17,6 +17,7 @@
 }
 
 .shopping-cart-icon-container {
+    // border: 1px solid red;
     position: relative;
     top: 13px;
     left: 3px;
@@ -27,9 +28,26 @@
     background: rgb(226, 223, 223);
 }
 .shopping-cart-icon {
+    // border: 1px solid green;
     border-radius: 50%;
     width: 32px;
     height: 32px;
+}
+.notification{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    // border: 1px solid red;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: rgb(250, 160, 119);
+    font-weight: 700;
+    text-align: center;
+    padding-top: 2px;
+}
+.hiding-notification{
+    display: none;
 }
 .navbar{
     width: 90%;

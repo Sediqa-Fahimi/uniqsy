@@ -5,8 +5,19 @@ import { Link, Route, Switch ,Redirect} from 'react-router-dom';
 import ProductIndexContainer from './products/product_index_container';
 import SearchContainer from './products/search';
 import ProductShowContainer from './products/product_show_container';
+import { connect } from 'react-redux';
 
-const App = () => {
+export const App = ({ cartItemsLen }) => {
+    let cartItemsNum;
+    let clsName;
+    if(!cartItemsLen){
+        cartItemsNum = "";
+        clsName = "hiding-notification";
+    } else {
+       cartItemsNum = cartItemsLen;
+        clsName = "notification"; 
+    }
+
     return (
         <>
             <div className="main-header">
@@ -17,6 +28,7 @@ const App = () => {
                     <HeaderContainer />
                     <Link to='#' className="shopping-cart-link">
                         <div className="shopping-cart-icon-container">
+                            <span className={clsName}>{cartItemsNum}</span>
                             <img src={window.cartURL} alt="" className="shopping-cart-icon" />
                         </div>
                     </Link>
@@ -48,4 +60,10 @@ const App = () => {
     );
 };
 
-export default App;
+
+const mSTP = state => {
+    return {
+        cartItemsLen: Object.keys(state.entities.cartItems).length
+    }
+}
+export default connect(mSTP)(App);
