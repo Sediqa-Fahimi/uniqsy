@@ -1,8 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 
 
-const Header = ({ currentUser, logout, openModal }) => {
+const Header = ({ currentUser, logout, openModal, history }) => {
+
+    const redirect = () => {
+        logout().then(()=> history.push(`/`));
+    }
 
     const sessionLink = () => (
         <nav className="login-signup">
@@ -12,7 +17,7 @@ const Header = ({ currentUser, logout, openModal }) => {
     const personalGreeting = () => (
         <div className="header-greeting">
             <h2 className="header-name">Hi, {currentUser.first_name}!</h2>
-            <button className="logout-btn" onClick={logout}>Log out</button>
+            <button className="logout-btn" onClick={redirect}>Log out</button>
         </div>
     );
 
@@ -23,4 +28,4 @@ const Header = ({ currentUser, logout, openModal }) => {
     );
 };
 
-export default Header;
+export default withRouter(Header);
