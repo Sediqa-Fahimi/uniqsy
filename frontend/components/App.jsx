@@ -62,7 +62,7 @@ export const App = ({ cartItemsLen }) => {
      );
 };
 
-// export default App;
+
 
 const mSTP = state => {
     return {

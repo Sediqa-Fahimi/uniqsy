@@ -113,9 +113,7 @@ class ProductIndex extends React.Component{
                             </li>
                         </ul>
                     </div>
-                    {/* <ul>
-                        {products.slice(0,6)}
-                    </ul> */}
+               
                 </div>
 
                 <div className="what-is-uniqsy group">

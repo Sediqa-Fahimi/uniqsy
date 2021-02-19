@@ -38,7 +38,7 @@ class CartShow extends React.Component {
                                                         <span className="checkmark"></span>
                                                     </label>
                                                 </div>
-                                                <div className="total"><span>Item(s) total:</span><span>${total}</span></div>
+                                                <div className="total"><span>Item(s) total:</span><span>${total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</span></div>
                                                 <button className="checkout-btn">Proceed to checkout</button>
                                             </>
         const len = this.props.items.length;
