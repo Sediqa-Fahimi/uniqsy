@@ -1,4 +1,4 @@
-
+import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 import { RECEIVE_ITEMS, REMOVE_ITEM } from '../actions/cartitem_actions';
 
@@ -11,6 +11,8 @@ const cartItemsReducer = (state = {}, action) => {
             const newState = Object.assign({}, state);
             delete newState[action.itemId];
             return newState;
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }

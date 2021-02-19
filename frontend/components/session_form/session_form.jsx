@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal);
+        this.props.processForm(user).then(this.props.closeModal).then(this.props.fetchCartItems);
     }
 
     handleGuest(e){
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
             first_name: 'Guest',
             password: 'quietgame51'
         };
-        this.props.login(guestUser).then(this.props.closeModal);
+        this.props.login(guestUser).then(this.props.closeModal).then(this.props.fetchCartItems);
     }
 
     render() {

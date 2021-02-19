@@ -13,8 +13,8 @@ class ProductShow extends React.Component{
     }
     handleClick(e){
         e.preventDefault();
-        this.props.addCartItem({product_id: this.props.productId, user_id: this.props.userId});
-        // this.props.parentCallback();
+        const { currentUser, openModal, addCartItem, productId, userId} = this.props;
+        currentUser ? addCartItem({product_id: productId, user_id: userId}) : openModal('login');
     }
    
     render(){

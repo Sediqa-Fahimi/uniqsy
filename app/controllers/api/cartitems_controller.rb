@@ -1,12 +1,8 @@
 class Api::CartitemsController < ApplicationController
     
     def index
-        if logged_in?
-            @cartitems = Cartitem.all.select{|item| item.user_id == current_user.id }
-            render 'api/cartitems/index'
-        else
-            require_login
-        end
+        @cartitems = CartItem.all.select{|item| item.user_id == current_user.id }
+        render 'api/cartitems/index'
     end
 
     def create
