@@ -16,8 +16,13 @@ class ProductShow extends React.Component{
     }
     handleClick(e){
         e.preventDefault();
-        const { currentUser, openModal, addCartItem, productId, userId} = this.props;
-        currentUser ? addCartItem({product_id: productId, user_id: userId, quantity: this.state.value}) : openModal('login');
+        const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
+        const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
+        if(currentUser){
+            cartitemId ? updateCartItem(cartitemId, cartitem) : addCartItem(cartitem);     
+        } else {
+            openModal('login');
+        }
     }
 
     handleChange(e) {
@@ -59,7 +64,7 @@ class ProductShow extends React.Component{
                             <p>{product.seller.first_name}</p>
                             <h1>{product.title}</h1>
                             <p>${product.price}</p>
-                            <p>Qty:</p>
+                            <span>Qty:</span>
                             <select value={this.state.value} onChange={this.handleChange} className="qty-show-page">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
