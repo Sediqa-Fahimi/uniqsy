@@ -15,7 +15,20 @@ class Api::CartitemsController < ApplicationController
         end 
     end
 
- 
+    def update
+        if logged_in?
+            @cartitem = CartItem.find_by(id: params[:id])
+            if @cartitem && @cartitem.update(cartitem_params)
+                @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
+                render :index
+            else
+                render json: @cartitem.errors.full_messages, status: 404
+            end
+        else  
+            require_login
+        end
+    end
+
     def destroy
         if logged_in?
             @cartitem = CartItem.find_by(id: params[:id])
@@ -31,6 +44,6 @@ class Api::CartitemsController < ApplicationController
     private
 
     def cartitem_params
-        params.require(:cartitem).permit(:product_id, :user_id)
+        params.require(:cartitem).permit(:product_id, :user_id, :quantity)
     end
 end
