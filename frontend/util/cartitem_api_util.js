@@ -22,10 +22,10 @@ export const removeCartitem = id => {
     })
 }
 
-export const updateCartitem = (id, cartitem) => {
+export const updateCartitem = (id, cartitem, increase) => {
     return $.ajax({
         method: 'PATCH',
         url: `/api/cartitems/${id}`,
-        data: { cartitem }
+        data: { cartitem, increase }
     })
 }

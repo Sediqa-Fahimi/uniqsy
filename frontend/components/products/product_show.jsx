@@ -19,7 +19,7 @@ class ProductShow extends React.Component{
         const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
         const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
         if(currentUser){
-            cartitemId ? updateCartItem(cartitemId, cartitem) : addCartItem(cartitem);     
+            cartitemId ? updateCartItem(cartitemId, cartitem, true) : addCartItem(cartitem);     
         } else {
             openModal('login');
         }

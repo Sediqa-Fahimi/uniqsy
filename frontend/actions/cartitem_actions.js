@@ -30,7 +30,7 @@ export const deleteCartItem = id => dispatch => {
     return APIUtil.removeCartitem(id).then(() => dispatch(removeCartItem(id)));
 }
 
-export const updateCartItem = (id, cartitem) => dispatch => {
-    return APIUtil.updateCartitem(id, cartitem).then(items => dispatch(receiveCartItems(items)));
+export const updateCartItem = (id, cartitem, increase) => dispatch => {
+    return APIUtil.updateCartitem(id, cartitem, increase).then(items => dispatch(receiveCartItems(items)));
 }
 
