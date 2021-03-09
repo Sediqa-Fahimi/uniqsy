@@ -164,22 +164,22 @@
     display: block;
     clear: both;
 }
-// .items-li{
-//     border: 2px solid blue;
-// }
+.items-li{
+    border: 2px solid blue;
+}
 .item-col{
-    // border: 2px solid red;
+    border: 2px solid red;
     float: left;
     box-sizing: border-box;
     padding: 10px;
     line-height: 28px;
 }
 .photo{
-    // border: 1px solid red;
+    border: 1px solid red;
     width: 20%;
 }
 .title{
-    // border: 1px solid red;
+    border: 1px solid red;
     width: 60%;
     line-height: 32px;
     font-size: 16px;
@@ -193,16 +193,36 @@
     p:hover{
         text-decoration: underline;
     }
+    div{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.qty-cart-page{
+    width: 80px;
+    height: 45px;
+    box-shadow: 0px 0px 10px 0px rgba(128, 127, 127, 0.1);
+    border-radius: 6px;
+    border: 1px solid #DEDEDE;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.qty-cart-page:hover{
+    box-shadow: 0px 0px 10px 0px rgba(67, 66, 66, 0.1);
+    border: 1px solid #7e7d7d;
 }
 .price{
-    // border: 1px solid red;
+    border: 1px solid red;
     width: 20%;
+    height: 130px;
     color: rgb(41, 41, 41);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
     text-align: right;
+    padding-top: 40px;
 }
 .remove-btn{
     width: 80px;

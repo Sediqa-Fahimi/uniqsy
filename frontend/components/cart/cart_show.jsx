@@ -15,7 +15,9 @@ class CartShow extends React.Component {
     render() {
         const items = this.props.items.map(item => {
             return (
-                <CartItem item={item} key={item.id} deleteCartItem={this.props.deleteCartItem}/>
+                <CartItem item={item} key={item.id} 
+                updateCartItem={this.props.updateCartItem}
+                deleteCartItem={this.props.deleteCartItem}/>
             )
         });
         let total = 0.0;

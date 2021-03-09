@@ -28,9 +28,12 @@ class CartItem extends React.Component {
                 </div>
                 <div className="item-col title">
                     <span>{item.first_name}</span>
-                    <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
-                        <p>{item.title}</p>
-                    </Link>
+                    <div>
+                        <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
+                            <p>{item.title}</p>
+                        </Link>
+                        <select name="" id="" className="qty-cart-page"></select>
+                    </div>
                     <button onClick={this.removeItem} className="remove-btn">Remove</button>
                 </div>
                 <div className="item-col price">

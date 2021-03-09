@@ -1,8 +1,6 @@
 
-
-
 import CartShow from "./cart_show";
-import { fetchCartItems, deleteCartItem } from '../../actions/cartitem_actions';
+import { fetchCartItems, deleteCartItem, updateCartItem } from '../../actions/cartitem_actions';
 import { itemsAsArray } from '../../reducers/selectors';
 import { connect } from 'react-redux';
 
@@ -16,7 +14,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchCartItems: () => dispatch(fetchCartItems()),
-        deleteCartItem: (id) => dispatch(deleteCartItem(id))
+        deleteCartItem: (id) => dispatch(deleteCartItem(id)),
+        updateCartItem: (id, cartitem, increase) => dispatch(updateCartItem(id, cartitem, increase))
     }
 }
 
