@@ -7,13 +7,16 @@ class CartItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {quantity: this.props.item.quantity};
-        
+
         this.handleClick = this.handleClick.bind(this);
         this.removeItem = this.removeItem.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(e){
-        this.setState({quantity: parseInt(e.target.value)})
+        this.setState({quantity: parseInt(e.target.value)});
+        // const { item } = this.props;
+        // const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
+        // this.props.updateCartItem(item.id,cartitem, false);
     }
     handleClick(e) {
         const productId = this.props.item.product_id;

@@ -71,6 +71,7 @@ class ProductShow extends React.Component{
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                             <button className="add-to-cart-btn" onClick={this.handleClick}>Add to cart</button>
                             <p>Description</p>
