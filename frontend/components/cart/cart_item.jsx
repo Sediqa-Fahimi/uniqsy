@@ -6,9 +6,25 @@ import { withRouter, Link } from 'react-router-dom';
 class CartItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {quantity: this.props.item.quantity};
+
         this.handleClick = this.handleClick.bind(this);
         this.removeItem = this.removeItem.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.updateDB = this.updateDB.bind(this);
     }
+    handleChange(e){
+        this.setState({quantity: parseInt(e.target.value)}, ()=>{
+            this.updateDB();
+        });
+    }
+
+    updateDB(){
+        const { item } = this.props;
+        const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
+        this.props.updateCartItem(item.id,cartitem, false);
+    }
+
     handleClick(e) {
         const productId = this.props.item.product_id;
         this.props.history.push(`/products/${productId}`);
@@ -28,13 +44,29 @@ class CartItem extends React.Component {
                 </div>
                 <div className="item-col title">
                     <span>{item.first_name}</span>
-                    <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
-                        <p>{item.title}</p>
-                    </Link>
+                    <div>
+                        <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
+                            <p>{item.title}</p>
+                        </Link>
+                        
+                        <select value={this.state.quantity} onChange={this.handleChange} className="qty-cart-page">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    
+                    </div>
                     <button onClick={this.removeItem} className="remove-btn">Remove</button>
                 </div>
                 <div className="item-col price">
-                    <p>${item.price}</p>
+                    <p>${item.total_price}</p>
                 </div>
             </li>
         )

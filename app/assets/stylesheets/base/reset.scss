@@ -24,6 +24,9 @@ button {
 button:focus{
   outline: none;
 }
+select:focus{
+  outline: none;
+}
 
 ul {
   list-style: none;

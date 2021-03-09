@@ -15,12 +15,14 @@ class CartShow extends React.Component {
     render() {
         const items = this.props.items.map(item => {
             return (
-                <CartItem item={item} key={item.id} deleteCartItem={this.props.deleteCartItem}/>
+                <CartItem item={item} key={item.id} 
+                updateCartItem={this.props.updateCartItem}
+                deleteCartItem={this.props.deleteCartItem}/>
             )
         });
         let total = 0.0;
         if(this.props.items.length != 0){
-            this.props.items.forEach(item => total += parseFloat(item.price));
+            this.props.items.forEach(item => total += parseFloat(item.total_price));
         }
         const checkout = total === 0.0 ? "" : <>
                                                 <div>

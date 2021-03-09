@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom';
 class ProductShow extends React.Component{
     constructor(props){
         super(props);
+        this.state = {value: 1};
+
+        this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
 
     }
@@ -13,10 +16,20 @@ class ProductShow extends React.Component{
     }
     handleClick(e){
         e.preventDefault();
-        const { currentUser, openModal, addCartItem, productId, userId} = this.props;
-        currentUser ? addCartItem({product_id: productId, user_id: userId}) : openModal('login');
+        const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
+        const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
+        if(currentUser){
+            const increase = true;
+            cartitemId ? updateCartItem(cartitemId, cartitem, increase) : addCartItem(cartitem);     
+        } else {
+            openModal('login');
+        }
     }
-   
+
+    handleChange(e) {
+        this.setState({value: parseInt(e.target.value, 10)});
+    }
+
     render(){
         const { product } = this.props;
         if (product === undefined) return null;
@@ -52,6 +65,14 @@ class ProductShow extends React.Component{
                             <p>{product.seller.first_name}</p>
                             <h1>{product.title}</h1>
                             <p>${product.price}</p>
+                            <span>Qty:</span>
+                            <select value={this.state.value} onChange={this.handleChange} className="qty-show-page">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                             <button className="add-to-cart-btn" onClick={this.handleClick}>Add to cart</button>
                             <p>Description</p>
                             <p>{product.description}</p>

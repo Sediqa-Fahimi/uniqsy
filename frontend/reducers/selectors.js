@@ -8,3 +8,11 @@ export const asArray = ({ products }) => {
 export const itemsAsArray = ({ cartItems }) => {
     return Object.keys(cartItems).map(key => cartItems[key])
 }
+
+export const checkCartItem = ({ cartItems }, productId) => {
+    let id;
+    Object.values(cartItems).forEach(item => {
+        if(item.product_id === productId) id = item.id;
+    })
+    return id;
+}
