@@ -51,60 +51,60 @@ Preventing multiple entries of the same item into the shopping cart and updating
 
 
 ```javascript
-    //product_show.jsx
+//product_show.jsx
 
-    handleClick(e){
-        e.preventDefault();
-        const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
-        const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
-        if(currentUser){
-            const increase = true;
-            cartitemId ? updateCartItem(cartitemId, cartitem, increase) : addCartItem(cartitem);     
-        } else {
-            openModal('login');
-        }
+handleClick(e){
+    e.preventDefault();
+    const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
+    const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
+    if(currentUser){
+        const increase = true;
+        cartitemId ? updateCartItem(cartitemId, cartitem, increase) : addCartItem(cartitem);     
+    } else {
+        openModal('login');
     }
+}
 ```
 
 ```javascript
-    //cart_item.jsx
-    
-    handleChange(e){
-        this.setState({quantity: parseInt(e.target.value)}, ()=>{
-            this.updateDB();
-        });
-    }
+//cart_item.jsx
 
-    updateDB(){
-        const { item } = this.props;
-        const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
-        this.props.updateCartItem(item.id,cartitem, false);
-    }
+handleChange(e){
+    this.setState({quantity: parseInt(e.target.value)}, ()=>{
+        this.updateDB();
+    });
+}
+
+updateDB(){
+    const { item } = this.props;
+    const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
+    this.props.updateCartItem(item.id,cartitem, false);
+}
 ```
 
 ```ruby
-    #cartitems_controller.rb
+#cartitems_controller.rb
 
-    def update
-        if logged_in?
-            @cartitem = CartItem.find_by(id: params[:id])
-            if @cartitem && (params[:increase] == 'true')
-                @cartitem.quantity += get_quantity
-                @cartitem.save
+def update
+    if logged_in?
+        @cartitem = CartItem.find_by(id: params[:id])
+        if @cartitem && (params[:increase] == 'true')
+            @cartitem.quantity += get_quantity
+            @cartitem.save
+            @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
+            render :index
+        else  
+            if @cartitem.update(cartitem_params)
                 @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
                 render :index
-            else  
-                if @cartitem.update(cartitem_params)
-                    @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
-                    render :index
-                else
-                    render json: @cartitem.errors.full_messages, status: 404
-                end
+            else
+                render json: @cartitem.errors.full_messages, status: 404
             end
-        else  
-            require_login
         end
+    else  
+        require_login
     end
+end
 ```
 
 
