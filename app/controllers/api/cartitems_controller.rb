@@ -19,7 +19,7 @@ class Api::CartitemsController < ApplicationController
        
         if logged_in?
             @cartitem = CartItem.find_by(id: params[:id])
-            if @cartitem && (params[:increase]
+            if @cartitem && (params[:increase] == 'true')
                 @cartitem.quantity += get_quantity
                 @cartitem.save
                 @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
