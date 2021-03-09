@@ -20,7 +20,6 @@ class ProductShow extends React.Component{
         const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
         if(currentUser){
             const increase = true;
-            debugger
             cartitemId ? updateCartItem(cartitemId, cartitem, increase) : addCartItem(cartitem);     
         } else {
             openModal('login');
