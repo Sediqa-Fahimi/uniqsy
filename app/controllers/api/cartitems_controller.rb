@@ -8,8 +8,7 @@ class Api::CartitemsController < ApplicationController
     def create
         @cartitem = CartItem.new(cartitem_params)
         if @cartitem.save && logged_in?
-            @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
-            render :index
+            redirect_to action: 'index'
         else
             render json: @cartitem.errors.full_messages, status: 404
         end 
@@ -23,7 +22,7 @@ class Api::CartitemsController < ApplicationController
                 @cartitem.quantity += get_quantity
                 @cartitem.save
                 @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
-                render :index 
+                render :index
             else  
                 if @cartitem.update(cartitem_params)
                     @cartitems = CartItem.all.select{ |item| item.user_id == current_user.id }
@@ -35,6 +34,7 @@ class Api::CartitemsController < ApplicationController
         else  
             require_login
         end
+        
     end
 
     def destroy
