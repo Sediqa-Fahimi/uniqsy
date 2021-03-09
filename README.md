@@ -2,8 +2,7 @@
 
 # uniqsy
 
-![alt text](https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/homepage.gif "Home page")
-
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/homepage.gif" alt="Home page" width="600"/>
 
 
 ## Introduction
@@ -31,8 +30,7 @@ Uniqsy is an online shopping website which is a self implemented version of the 
 1. #### User Authentication
 Users can login and logout to an existing account. Users can sign up for a new account. A guest account is provided for browsing the website. 
 
-![Alt Text](https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/userauth.gif)
-
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/userauth.gif" alt="AuthDemo" width="600"/>
 
 
 2. #### Product listing
@@ -44,7 +42,7 @@ Homepage lists variety of products in different sections with unique styling. Us
 
 Users are required to login before they can add items to their shopping cart in order to keep a record of their items in the cart after they logout and when they log back in. Users can view their shopping cart. They can remove items from the shopping cart. They can change the quantity of items in the shopping cart and have the total price calculated. 
 
-![Alt Text](https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shoppingcart.gif)
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shoppingcart.gif" alt="Shopping cart demo" width="600"/>
 
 ### Challenges
 Preventing multiple entries of the same item into the shopping cart and updating the quantity from product show page and from cart show page was a challenge for me. I decided to accomplish this by sending an increment flag via the ajax call to the rails update action controller function to be checked for either increasing or updating the quantity. I devided the logic and separated the concern into each page's functionality. The Add to Cart button in the product show page will increase the quantity while the select tag in cart show page will update the final qunatity number for immidiate checkout or for fututre checkout. Both increaseing and updating changes are being reflected into the DB. The flag is being sent as an additional data in the params to the update action controller, then the update action controller will only increment the quantity if increase == true (update from product show page) or actually update the quantity if increase == false (update from cart show page).
