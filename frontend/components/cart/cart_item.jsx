@@ -6,8 +6,14 @@ import { withRouter, Link } from 'react-router-dom';
 class CartItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {quantity: this.props.item.quantity};
+        
         this.handleClick = this.handleClick.bind(this);
         this.removeItem = this.removeItem.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(e){
+        this.setState({quantity: parseInt(e.target.value)})
     }
     handleClick(e) {
         const productId = this.props.item.product_id;
@@ -32,7 +38,20 @@ class CartItem extends React.Component {
                         <Link to={`/products/${item.product_id}`} onClick={() => this.handleClick}>
                             <p>{item.title}</p>
                         </Link>
-                        <select name="" id="" className="qty-cart-page"></select>
+                        
+                        <select value={this.state.quantity} onChange={this.handleChange} className="qty-cart-page">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    
                     </div>
                     <button onClick={this.removeItem} className="remove-btn">Remove</button>
                 </div>

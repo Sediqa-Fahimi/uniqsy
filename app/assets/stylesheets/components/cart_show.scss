@@ -164,22 +164,22 @@
     display: block;
     clear: both;
 }
-.items-li{
-    border: 2px solid blue;
-}
+// .items-li{
+//     border: 2px solid blue;
+// }
 .item-col{
-    border: 2px solid red;
+    // border: 2px solid red;
     float: left;
     box-sizing: border-box;
     padding: 10px;
     line-height: 28px;
 }
 .photo{
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 20%;
 }
 .title{
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 60%;
     line-height: 32px;
     font-size: 16px;
@@ -199,7 +199,7 @@
     }
 }
 .qty-cart-page{
-    width: 80px;
+    width: 100px;
     height: 45px;
     box-shadow: 0px 0px 10px 0px rgba(128, 127, 127, 0.1);
     border-radius: 6px;
@@ -213,7 +213,7 @@
     border: 1px solid #7e7d7d;
 }
 .price{
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 20%;
     height: 130px;
     color: rgb(41, 41, 41);
@@ -232,7 +232,6 @@
     font-weight: 400;
     color: rgb(46, 46, 46);
     border-radius: 300px;
-    margin-top: 10px;
 }
 .remove-btn:hover{
     background:rgb(213, 213, 213);
