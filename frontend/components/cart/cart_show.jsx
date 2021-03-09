@@ -22,7 +22,7 @@ class CartShow extends React.Component {
         });
         let total = 0.0;
         if(this.props.items.length != 0){
-            this.props.items.forEach(item => total += parseFloat(item.price));
+            this.props.items.forEach(item => total += parseFloat(item.total_price));
         }
         const checkout = total === 0.0 ? "" : <>
                                                 <div>

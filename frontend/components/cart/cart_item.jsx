@@ -66,7 +66,7 @@ class CartItem extends React.Component {
                     <button onClick={this.removeItem} className="remove-btn">Remove</button>
                 </div>
                 <div className="item-col price">
-                    <p>${item.price}</p>
+                    <p>${item.total_price}</p>
                 </div>
             </li>
         )
