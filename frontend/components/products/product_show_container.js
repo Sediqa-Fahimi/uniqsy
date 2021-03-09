@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     return {
         fetchProduct: (id) => dispatch(fetchProduct(id)),
         addCartItem: (cartitem) => dispatch(addCartItem(cartitem)),
-        updateCartItem: (id, cartitem) => dispatch(updateCartItem(id, cartitem)),
+        updateCartItem: (id, cartitem, increase) => dispatch(updateCartItem(id, cartitem, increase)),
         openModal: modal => dispatch(openModal(modal))
     }
 }

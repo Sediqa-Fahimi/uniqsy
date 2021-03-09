@@ -31,6 +31,7 @@ export const deleteCartItem = id => dispatch => {
 }
 
 export const updateCartItem = (id, cartitem, increase) => dispatch => {
+    debugger
     return APIUtil.updateCartitem(id, cartitem, increase).then(items => dispatch(receiveCartItems(items)));
 }
 
