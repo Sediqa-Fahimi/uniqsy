@@ -55,8 +55,21 @@ Preventing multiple entries of the same item into the shopping cart and updating
 
 handleClick(e){
     e.preventDefault();
-    const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
-    const cartitem = {product_id: productId, user_id: userId, quantity: this.state.value};
+    const { currentUser, 
+            openModal, 
+            addCartItem, 
+            updateCartItem, 
+            productId, 
+            userId, 
+            cartitemId
+            } = this.props;
+
+    const cartitem = {
+        product_id: productId, 
+        user_id: userId, 
+        quantity: this.state.value
+        };
+
     if(currentUser){
         const increase = true;
         cartitemId ? updateCartItem(cartitemId, cartitem, increase) : addCartItem(cartitem);     
@@ -77,8 +90,13 @@ handleChange(e){
 
 updateDB(){
     const { item } = this.props;
-    const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
-    this.props.updateCartItem(item.id,cartitem, false);
+    const cartitem = {
+        product_id: item.product_id, 
+        user_id: item.user_id, 
+        quantity: this.state.quantity
+        }
+    const increase = false;
+    this.props.updateCartItem(item.id,cartitem, increase);
 }
 ```
 

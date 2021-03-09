@@ -22,7 +22,8 @@ class CartItem extends React.Component {
     updateDB(){
         const { item } = this.props;
         const cartitem = {product_id: item.product_id, user_id: item.user_id, quantity: this.state.quantity}
-        this.props.updateCartItem(item.id,cartitem, false);
+        const increase = false;
+        this.props.updateCartItem(item.id,cartitem, increase);
     }
 
     handleClick(e) {
