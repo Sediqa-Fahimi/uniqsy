@@ -11,6 +11,7 @@ require 'open-uri'
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 u1 = User.create!(email: 'myguest@test.com',first_name: 'Guest', password: 'quietgame51')
 u2 = User.create!(email: 'Arianna@test.com',first_name: 'Arianna', password: 'oddfrog16')
@@ -356,7 +357,7 @@ p12.photos.attach(io: file125, filename: 'p12-5.jpg')
 
 
 p13 = Product.create!(title: "Valentine's Day Wreath, Dried Flower Valentines Day Wreath", 
-price: 121.49, 
+price: 12.49, 
 description: "Stunning and sophisticated modern 12 inch hoop wreath (other sizes available) on gold brass frame, decorated with dried materials: dried pink oregano, burgundy strawflowers, white dried statice, Scottish pink heather, dried everlastings, mini daisies. Accented with twine.", 
 seller_id: u14.id)
 
@@ -553,3 +554,34 @@ p20.photos.attach(io: file202, filename: 'p20-2.jpg')
 p20.photos.attach(io: file203, filename: 'p20-3.jpg')
 p20.photos.attach(io: file204, filename: 'p20-4.jpg')
 p20.photos.attach(io: file205, filename: 'p20-5.jpg')
+
+r1 = Review.create!(content: 'I love, love, these ',rating: 3, product_id: p1.id, user_id: u3.id)
+r2 = Review.create!(content: '',rating: 4, product_id: p1.id, user_id: u4.id)
+r3 = Review.create!(content: '',rating: 5, product_id: p2.id, user_id: u4.id)
+r4 = Review.create!(content: '',rating: 5, product_id: p2.id, user_id: u5.id)
+r5 = Review.create!(content: '',rating: 4, product_id: p3.id, user_id: u5.id)
+r6 = Review.create!(content: '',rating: 3, product_id: p3.id, user_id: u6.id)
+r7 = Review.create!(content: '',rating: 2, product_id: p4.id, user_id: u6.id)
+r8 = Review.create!(content: '',rating: 4, product_id: p4.id, user_id: u7.id)
+r9 = Review.create!(content: '',rating: 3, product_id: p5.id, user_id: u7.id)
+r10 = Review.create!(content: '',rating: 3, product_id: p5.id, user_id: u8.id)
+r11 = Review.create!(content: '',rating: 5, product_id: p6.id, user_id: u8.id)
+r12 = Review.create!(content: '',rating: 3, product_id: p6.id, user_id: u9.id)
+r13 = Review.create!(content: '',rating: 5, product_id: p7.id, user_id: u9.id)
+r14 = Review.create!(content: '',rating: 3, product_id: p7.id, user_id: u10.id)
+r15 = Review.create!(content: '',rating: 5, product_id: p8.id, user_id: u10.id)
+r16 = Review.create!(content: '',rating: 3, product_id: p8.id, user_id: u11.id)
+r17 = Review.create!(content: '',rating: 5, product_id: p9.id, user_id: u11.id)
+r18 = Review.create!(content: '',rating: 4, product_id: p9.id, user_id: u12.id)
+r19 = Review.create!(content: '',rating: 5, product_id: p10.id, user_id: u12.id)
+r20 = Review.create!(content: '',rating: 4, product_id: p11.id, user_id: u13.id)
+r21 = Review.create!(content: '',rating: 4, product_id: p12.id, user_id: u14.id)
+r22 = Review.create!(content: '',rating: 3, product_id: p13.id, user_id: u15.id)
+r23 = Review.create!(content: '',rating: 4, product_id: p14.id, user_id: u16.id)
+r24 = Review.create!(content: '',rating: 3, product_id: p15.id, user_id: u17.id)
+r25 = Review.create!(content: '',rating: 4, product_id: p16.id, user_id: u18.id)
+r26 = Review.create!(content: '',rating: 5, product_id: p17.id, user_id: u19.id)
+r27 = Review.create!(content: '',rating: 4, product_id: p18.id, user_id: u20.id)
+r28 = Review.create!(content: '',rating: 5, product_id: p19.id, user_id: u17.id)
+r29 = Review.create!(content: '',rating: 5, product_id: p20.id, user_id: u18.id)
+
