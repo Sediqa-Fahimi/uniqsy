@@ -1,17 +1,18 @@
 # == Schema Information
 #
-# Table name: cart_items
+# Table name: reviews
 #
 #  id         :bigint           not null, primary key
+#  content    :text             default("")
+#  rating     :integer          not null
 #  product_id :integer          not null
-#  user_id    :integer          not null
+#  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  quantity   :integer          default(1), not null
 #
 require 'test_helper'
 
-class CartItemTest < ActiveSupport::TestCase
+class ReviewTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

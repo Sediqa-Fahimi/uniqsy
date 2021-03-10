@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_175130) do
+ActiveRecord::Schema.define(version: 2021_03_09_235636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 2021_03_08_175130) do
     t.decimal "price", precision: 8, scale: 2
     t.index ["seller_id"], name: "index_products_on_seller_id"
     t.index ["title"], name: "index_products_on_title"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content", default: ""
+    t.integer "rating", null: false
+    t.integer "product_id", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_reviews_on_author_id"
+    t.index ["product_id"], name: "index_reviews_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
