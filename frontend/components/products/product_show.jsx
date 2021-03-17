@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReviewListItemContainer from './review_list_item_container';
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -31,11 +32,19 @@ class ProductShow extends React.Component{
     }
 
     render(){
-        const { product } = this.props;
+        const { product, reviews } = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
         if (!product.photoUrl) return null;
         if (!product.photoUrls) return null;
+        const reviewList = reviews.map(review => {
+            return (
+                <ReviewListItemContainer
+                review={review}
+                key={review.id}
+                />
+            )
+        });
         return(
             <>
                 <div className="product-show-page group">
@@ -58,7 +67,10 @@ class ProductShow extends React.Component{
                         </div>
 
                         <br/><br/>
-                        <div>Reviews</div>
+                        <div>Reviews
+                            <p>Average rating: {product.average_rating}</p>
+                            {reviewList}
+                        </div>
                     </div>
                     <div className="col col-1-3">
                         <aside className="aside">
