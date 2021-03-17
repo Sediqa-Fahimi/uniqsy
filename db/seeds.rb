@@ -59,7 +59,7 @@ p1.photos.attach(io: file15, filename: 'p1-5.jpg')
 
 
 p2 = Product.create!(title: 'Set of Beach Wall Art Prints, Beach Posters', 
-price: 10.00, 
+price: 10.12, 
 description: 'Set of 100 Beach Wall Art Prints, Beach Posters, Surfing Posters, California Prints, Coastal Print, Beach Prints, Ocean Art, Tropical Vibes.
 
 We offer MODERN and MINIMALIST digital DIY Art Prints that are easy to download and print !
@@ -205,7 +205,7 @@ p6.photos.attach(io: file65, filename: 'p6-5.jpg')
 
 
 p7 = Product.create!(title: 'Custom Heart Necklace • Engrave Heart Pendant', 
-price: 69.00, 
+price: 15.23, 
 description: "I N T E R L O C K E D ∙ H E A R T ∙ C H A R M ∙ N E C K L A C E
 
 • Material: High Quality Solid 925 Sterling Silver
@@ -282,7 +282,7 @@ p9.photos.attach(io: file95, filename: 'p9-5.jpg')
 
 
 p10 = Product.create!(title: '3 Tier Hanging Plant Shelf', 
-price: 69.23, 
+price: 50.23, 
 description: "Take a look at all our hanging plant solutions in our shop
 
 3 Tier Hanging Plant Shelf
@@ -376,7 +376,7 @@ p13.photos.attach(io: file135, filename: 'p13-5.jpg')
 
 
 p14 = Product.create!(title: "Pink Peony Modern Hoop Wreath For Front Door Floral Wreath, Modern Farmhouse Lamb's Ear Wreath, Indoor Wreath for Wall Decor", 
-price: 52.20, 
+price: 22.20, 
 description: "Welcome to Wreaths by Sabina!
 
 This versatile beautiful wreath can be a front door, indoor or nursery room hoop wreath, bringing a lovely burst of color to your home!
@@ -400,7 +400,7 @@ p14.photos.attach(io: file144, filename: 'p14-4.jpg')
 p14.photos.attach(io: file145, filename: 'p14-5.jpg')
 
 p15 = Product.create!(title: "BIRTHDAY CAKE TOPPER. Name & Age Cake Topper,First Birthday Age Cake Topper,Birthday Cake Decoration,", 
-price: 11.91, 
+price: 11.99, 
 description: "This Custom name Birthday glitter cake topper is perfect to decorate your little one's cake. It is made of high quality cardstock. You can personalise with the name of birthday girl or boy and their age.
 
 Now you have the option to choose whether you would like a single sided cake topper (white in the back) or double sided, which has a 3D effect to make it sparkle from all angles.", 
@@ -529,7 +529,7 @@ p19.photos.attach(io: file195, filename: 'p19-5.jpg')
 
 
 p20 = Product.create!(title: "Grow Positive Thoughts Shirt | Positive Thought Tee | Mental Health Shirt | Kindness Shirt | Plant Shirt | Positive Shirt", 
-price: 10.50, 
+price: 10.99, 
 description: "Graphic color will be black or white.
 (Same as color name on shirt style charts)  
 
@@ -555,33 +555,33 @@ p20.photos.attach(io: file203, filename: 'p20-3.jpg')
 p20.photos.attach(io: file204, filename: 'p20-4.jpg')
 p20.photos.attach(io: file205, filename: 'p20-5.jpg')
 
-r1 = Review.create!(content: 'Love this print for my guest bedroom!',rating: 5, product_id: p1.id, user_id: u3.id)
-r2 = Review.create!(content: 'They are fantastic! clear and crisp. Love them!',rating: 4, product_id: p1.id, user_id: u4.id)
-r3 = Review.create!(content: 'Love my beach prints! could not be happier!',rating: 5, product_id: p2.id, user_id: u4.id)
-r4 = Review.create!(content: 'Interesting design. Promptly processed order.',rating: 5, product_id: p2.id, user_id: u5.id)
-r5 = Review.create!(content: 'Perfect print for our dining room! ❤️',rating: 4, product_id: p3.id, user_id: u5.id)
-r6 = Review.create!(content: 'These pieces of art turned out amazing! LOVE!',rating: 5, product_id: p3.id, user_id: u6.id)
-r7 = Review.create!(content: 'I ordered these prints for above our bed. I couldn’t be happier with how they turned out!',rating: 5, product_id: p4.id, user_id: u6.id)
-r8 = Review.create!(content: 'Absolutely LOVE these prints! We put them above our bed in our master bedroom and they turned out beautifully.',rating: 4, product_id: p4.id, user_id: u7.id)
-r9 = Review.create!(content: 'Beautiful pictures! They complete our room. Thank you!',rating: 5, product_id: p5.id, user_id: u7.id)
-r10 = Review.create!(content: 'We love the canvas beach picture we ordered! The overall quality of the picture and canvas is pretty good and exceeded our expectations.',rating: 3, product_id: p5.id, user_id: u8.id)
-r11 = Review.create!(content: 'Super pretty and exactly like the photos! I am super happy I purchased. In love!!',rating: 5, product_id: p6.id, user_id: u8.id)
-r12 = Review.create!(content: 'Turned out beautiful! it was perfect!',rating: 3, product_id: p6.id, user_id: u9.id)
-r13 = Review.create!(content: 'Absolutely beautiful!!!! Will be purchasing other items for sure! The engraving is delicate but noticeable because it is outlined perfectly',rating: 5, product_id: p7.id, user_id: u9.id)
-r14 = Review.create!(content: 'Absolutely beautiful, blown away with how great they are and beautiful the packaging is. Thank you very much!!',rating: 3, product_id: p7.id, user_id: u10.id)
-r15 = Review.create!(content: 'The necklace looks good, and I am pretty happy with it.',rating: 3, product_id: p8.id, user_id: u10.id)
-r16 = Review.create!(content: 'My mom loved her gift!',rating: 3, product_id: p8.id, user_id: u11.id)
-r17 = Review.create!(content: 'Lightening speed shipping! Got my planters in 3 days and they are beautiful! Thank you!',rating: 5, product_id: p9.id, user_id: u11.id)
-r18 = Review.create!(content: 'I love the black iron look and feel, great quality. These look great above my fireplace!',rating: 4, product_id: p9.id, user_id: u12.id)
-r19 = Review.create!(content: 'Oh so pretty. It is as lovely as described.... didn’t take over my tiny little space as it is a petite item. Nicely made!',rating: 5, product_id: p10.id, user_id: u12.id)
-r20 = Review.create!(content: 'The candle and match kit is the cutest thing ever. I am definetly going to order more.',rating: 4, product_id: p11.id, user_id: u13.id)
-r21 = Review.create!(content: 'These are absolutely beautiful! Exactly what I expected. They even still smell like fresh wood.',rating: 4, product_id: p12.id, user_id: u14.id)
-r22 = Review.create!(content: 'Absoutlely gorgeous!! I am so in LOVE with this wreath the craftsmanship is just simply amazing!!',rating: 3, product_id: p13.id, user_id: u15.id)
-r23 = Review.create!(content: 'I love it!! 💕Looks better than I expected, and is a perfect piece for my front door!',rating: 4, product_id: p14.id, user_id: u16.id)
-r24 = Review.create!(content: 'So beautiful. I am so pleased',rating: 3, product_id: p15.id, user_id: u17.id)
-r25 = Review.create!(content: 'Was the perfect finish to our yummy cake!',rating: 4, product_id: p16.id, user_id: u18.id)
-r26 = Review.create!(content: 'SO SATISFIED! This dress stole the show. Excellent experience.',rating: 5, product_id: p17.id, user_id: u19.id)
-r27 = Review.create!(content: 'The shirt is adorable and I love the way you can customize it.',rating: 4, product_id: p18.id, user_id: u20.id)
-r28 = Review.create!(content: 'Just received my package and I am totally in love with them! Can’t wait to give the shirts to my besties I just know they will love it!',rating: 5, product_id: p19.id, user_id: u17.id)
-r29 = Review.create!(content: 'The color is beautiful and the fabric is very soft.I have received lots of compliments! Love this shirt!',rating: 5, product_id: p20.id, user_id: u18.id)
+r1 = Review.create!(content: 'Love this print for my guest bedroom!',rating: 5, product_id: p1.id, author_id: u3.id)
+r2 = Review.create!(content: 'They are fantastic! clear and crisp. Love them!',rating: 4, product_id: p1.id, author_id: u4.id)
+r3 = Review.create!(content: 'Love my beach prints! could not be happier!',rating: 5, product_id: p2.id, author_id: u4.id)
+r4 = Review.create!(content: 'Interesting design. Promptly processed order.',rating: 5, product_id: p2.id, author_id: u5.id)
+r5 = Review.create!(content: 'Perfect print for our dining room! ❤️',rating: 4, product_id: p3.id, author_id: u5.id)
+r6 = Review.create!(content: 'These pieces of art turned out amazing! LOVE!',rating: 5, product_id: p3.id, author_id: u6.id)
+r7 = Review.create!(content: 'I ordered these prints for above our bed. I couldn’t be happier with how they turned out!',rating: 5, product_id: p4.id, author_id: u6.id)
+r8 = Review.create!(content: 'Absolutely LOVE these prints! We put them above our bed in our master bedroom and they turned out beautifully.',rating: 4, product_id: p4.id, author_id: u7.id)
+r9 = Review.create!(content: 'Beautiful pictures! They complete our room. Thank you!',rating: 5, product_id: p5.id, author_id: u7.id)
+r10 = Review.create!(content: 'We love the canvas beach picture we ordered! The overall quality of the picture and canvas is pretty good and exceeded our expectations.',rating: 3, product_id: p5.id, author_id: u8.id)
+r11 = Review.create!(content: 'Super pretty and exactly like the photos! I am super happy I purchased. In love!!',rating: 5, product_id: p6.id, author_id: u8.id)
+r12 = Review.create!(content: 'Turned out beautiful! it was perfect!',rating: 3, product_id: p6.id, author_id: u9.id)
+r13 = Review.create!(content: 'Absolutely beautiful!!!! Will be purchasing other items for sure! The engraving is delicate but noticeable because it is outlined perfectly',rating: 5, product_id: p7.id, author_id: u9.id)
+r14 = Review.create!(content: 'Absolutely beautiful, blown away with how great they are and beautiful the packaging is. Thank you very much!!',rating: 3, product_id: p7.id, author_id: u10.id)
+r15 = Review.create!(content: 'The necklace looks good, and I am pretty happy with it.',rating: 3, product_id: p8.id, author_id: u10.id)
+r16 = Review.create!(content: 'My mom loved her gift!',rating: 3, product_id: p8.id, author_id: u11.id)
+r17 = Review.create!(content: 'Lightening speed shipping! Got my planters in 3 days and they are beautiful! Thank you!',rating: 5, product_id: p9.id, author_id: u11.id)
+r18 = Review.create!(content: 'I love the black iron look and feel, great quality. These look great above my fireplace!',rating: 4, product_id: p9.id, author_id: u12.id)
+r19 = Review.create!(content: 'Oh so pretty. It is as lovely as described.... didn’t take over my tiny little space as it is a petite item. Nicely made!',rating: 5, product_id: p10.id, author_id: u12.id)
+r20 = Review.create!(content: 'The candle and match kit is the cutest thing ever. I am definetly going to order more.',rating: 4, product_id: p11.id, author_id: u13.id)
+r21 = Review.create!(content: 'These are absolutely beautiful! Exactly what I expected. They even still smell like fresh wood.',rating: 4, product_id: p12.id, author_id: u14.id)
+r22 = Review.create!(content: 'Absoutlely gorgeous!! I am so in LOVE with this wreath the craftsmanship is just simply amazing!!',rating: 3, product_id: p13.id, author_id: u15.id)
+r23 = Review.create!(content: 'I love it!! 💕Looks better than I expected, and is a perfect piece for my front door!',rating: 4, product_id: p14.id, author_id: u16.id)
+r24 = Review.create!(content: 'So beautiful. I am so pleased',rating: 3, product_id: p15.id, author_id: u17.id)
+r25 = Review.create!(content: 'Was the perfect finish to our yummy cake!',rating: 4, product_id: p16.id, author_id: u18.id)
+r26 = Review.create!(content: 'SO SATISFIED! This dress stole the show. Excellent experience.',rating: 5, product_id: p17.id, author_id: u19.id)
+r27 = Review.create!(content: 'The shirt is adorable and I love the way you can customize it.',rating: 4, product_id: p18.id, author_id: u20.id)
+r28 = Review.create!(content: 'Just received my package and I am totally in love with them! Can’t wait to give the shirts to my besties I just know they will love it!',rating: 5, product_id: p19.id, author_id: u17.id)
+r29 = Review.create!(content: 'The color is beautiful and the fabric is very soft.I have received lots of compliments! Love this shirt!',rating: 5, product_id: p20.id, author_id: u18.id)
 
