@@ -16,3 +16,7 @@ export const checkCartItem = ({ cartItems }, productId) => {
     })
     return id;
 }
+
+export const selectReviewsForProduct = ({ products, reviews }, product) => {
+  return product.reviewIds.map(reviewId => reviews[reviewId]);
+};

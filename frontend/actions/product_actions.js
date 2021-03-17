@@ -20,12 +20,14 @@ export const receiveProduct = ({ product, reviews, authors }) => {
         authors
     }
 }
-export const receiveReview = ({ review, average_rating, author }) => ({
-  type: RECEIVE_REVIEW,
-  review,
-  average_rating,
-  author,
-});
+export const receiveReview = ({ review, average_rating, author }) => {
+    return {
+        type: RECEIVE_REVIEW,
+        review,
+        average_rating,
+        author,
+    }
+};
 
 export const fetchProducts = () => dispatch => {
     return APIUtil.fetchProducts().then(products => dispatch(receiveProducts(products)));
