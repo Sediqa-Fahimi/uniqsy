@@ -69,9 +69,11 @@ class ProductShow extends React.Component{
                             <button>{'>'}</button>
                         </div>
 
-                        <br/><br/>
-                        <div>Reviews
-                            <p>Average rating: {product.average_rating}</p>
+                        <div className="reviews">
+                            <div className="reviews-header">
+                                <span>{reviews.length} Reviews</span>
+                                <span>Average rating: {product.average_rating}</span>
+                            </div>
                             {reviewList}
                             <ReviewLink
                                 component={ReviewFormContainer}

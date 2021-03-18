@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Review = ({ review, author }) => {
-  const { rating, content } = review;
+  const { rating, content, created_at } = review;
   return (
-    <div>
+    <div className="review-item">
       <ul>
+        <li>{author.first_name}{created_at}</li>
         <li>Rating: {rating}</li>
-        <li>{content} - by {author.first_name}</li>
-
+        <li>{content}</li>
       </ul>
     </div>
   );
