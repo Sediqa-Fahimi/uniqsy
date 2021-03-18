@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
-import openModal from '../actions/modal_actions';
+import OpenModalComponent from '../components/modal/open_modal';
 
-const Protected = ({ component: Component, path, loggedIn, exact, openModal }) => (
+const Protected = ({ component: Component, path, loggedIn, exact}) => (
   <Route path={path} exact={exact} render={(props) => (
      loggedIn ? (
       <Component {...props} />
     ) : (
-      openModal('login')
+      <OpenModalComponent />
     )
   )} />
 );
@@ -17,11 +17,7 @@ const mapStateToProps = state => (
   {loggedIn: Boolean(state.session.id)}
 );
 
-const mapDispatchToProps = dispatch => {
-    return {
-        openModal: modal => dispatch(openModal(modal))
-    }
-}
 
 
-export const ProtectedRoute = withRouter(connect(mapStateToProps,mapDispatchToProps)(Protected));
+
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

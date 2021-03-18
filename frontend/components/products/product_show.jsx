@@ -75,7 +75,7 @@ class ProductShow extends React.Component{
                             {reviewList}
                             <ReviewLink
                                 component={ReviewFormContainer}
-                                to={`/products/${productId}/review`}
+                                to={`/products/${product.id}/review`}
                                 label="Leave a Review"
                             />
                             <ProtectedRoute
