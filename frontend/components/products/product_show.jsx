@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReviewListItemContainer from './review_list_item_container';
+import { ProtectedRoute } from '../../util/route_util';
+import { ReviewLink } from '../../util/link_util';
+import ReviewFormContainer from './review_form_container';
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -70,6 +73,15 @@ class ProductShow extends React.Component{
                         <div>Reviews
                             <p>Average rating: {product.average_rating}</p>
                             {reviewList}
+                            <ReviewLink
+                                component={ReviewFormContainer}
+                                to={`/products/${productId}/review`}
+                                label="Leave a Review"
+                            />
+                            <ProtectedRoute
+                                path="/products/:productId/review"
+                                component={ReviewFormContainer}
+                            />
                         </div>
                     </div>
                     <div className="col col-1-3">
