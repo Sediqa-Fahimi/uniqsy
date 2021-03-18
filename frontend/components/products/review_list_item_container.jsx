@@ -3,13 +3,19 @@ import { connect } from 'react-redux';
 
 const Review = ({ review, author }) => {
   const { rating, content, created_at } = review;
+ 
+  const dateArray = new Date(created_at).toString().split(' ');
+  const date = `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
+ 
   return (
     <div className="review-item">
-      <ul>
-        <li>{author.first_name}{created_at}</li>
-        <li>Rating: {rating}</li>
-        <li>{content}</li>
-      </ul>
+      <div className="review-title">
+        <p><a>{author.first_name}</a>{date}</p>
+      </div>
+      <div className="review-body">
+        <div>Rating: {rating}</div>
+        <p>{content}</p>
+      </div>
     </div>
   );
 };

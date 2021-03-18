@@ -8,11 +8,31 @@
     color: rgb(34,34,34);
     display: flex;
     font-family: 'Martel', serif;
-    font-size: 14px;
+    font-size: 16px;
     h3{
         margin-right: 10px;
     }
 }
 .review-item{
-    border: 1px solid red;
+    border: 1px solid red; 
+    margin-top: 10px;
+}
+.review-title{
+    color: rgb(89,89,89);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 18px;
+    padding: 5px;
+    a{
+        text-decoration: underline;
+        margin-right: 10px;
+    }
+}
+.review-body{
+    box-sizing: border-box;
+    color: rgb(34,34,34);
+    font-family: 'Martel', serif;
+    font-size: 15px;
+    padding-left: 48px;
 }
