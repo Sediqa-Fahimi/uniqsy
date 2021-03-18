@@ -5,6 +5,7 @@ json.product do
     end
     json.photoUrls @product.photos.map { |file| url_for(file) }
     json.reviewIds @product.reviews.pluck(:id)
+    json.average_rating @product.average_rating
 end
 
 @product.reviews.includes(:author).each do |review|
@@ -20,3 +21,4 @@ end
     end
   end
 end
+

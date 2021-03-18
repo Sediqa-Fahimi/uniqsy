@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCT } from '../actions/product_actions';
+import { RECEIVE_PRODUCT, RECEIVE_REVIEW } from '../actions/product_actions';
 import { RECEIVE_CURRENT_USER } from './../actions/session_actions';
 
 const usersReducer = (state = {}, action) => {
