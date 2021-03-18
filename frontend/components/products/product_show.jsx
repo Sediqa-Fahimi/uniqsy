@@ -71,7 +71,7 @@ class ProductShow extends React.Component{
 
                         <div className="reviews">
                             <div className="reviews-header">
-                                <span>{reviews.length} Reviews</span>
+                                <h3>{reviews.length} reviews</h3>
                                 <span>Average rating: {product.average_rating}</span>
                             </div>
                             {reviewList}

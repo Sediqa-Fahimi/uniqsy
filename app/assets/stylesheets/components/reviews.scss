@@ -4,6 +4,14 @@
 }
 .reviews-header{
     border: 1px solid blue;
+    box-sizing: border-box;
+    color: rgb(34,34,34);
+    display: flex;
+    font-family: 'Martel', serif;
+    font-size: 14px;
+    h3{
+        margin-right: 10px;
+    }
 }
 .review-item{
     border: 1px solid red;
