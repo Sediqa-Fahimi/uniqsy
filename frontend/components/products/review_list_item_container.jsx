@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 const Review = ({ review, author }) => {
   const { rating, content, created_at } = review;
@@ -13,7 +15,13 @@ const Review = ({ review, author }) => {
         <p><a>{author.first_name}</a>{date}</p>
       </div>
       <div className="review-body">
-        <div>Rating: {rating}</div>
+        <div><StarRatingComponent 
+              name="rating"
+              editing={false}
+              starCount={5}
+              value={parseFloat(rating)}
+              /></div>
+        {/* <div>Rating: {rating}</div> */}
         <p>{content}</p>
       </div>
     </div>

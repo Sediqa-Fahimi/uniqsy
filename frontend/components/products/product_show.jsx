@@ -4,6 +4,7 @@ import ReviewListItemContainer from './review_list_item_container';
 import { ProtectedRoute } from '../../util/route_util';
 import { ReviewLink } from '../../util/link_util';
 import ReviewFormContainer from './review_form_container';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -72,7 +73,13 @@ class ProductShow extends React.Component{
                         <div className="reviews">
                             <div className="reviews-header">
                                 <h3>{reviews.length} reviews</h3>
-                                <span>Average rating: {product.average_rating}</span>
+                                <span><StarRatingComponent 
+                                        name="average-rating"
+                                        editing={false}
+                                        starCount={5}
+                                        value={parseFloat(product.average_rating)}
+                                        /></span>
+                                {/* <span>Average rating: {product.average_rating}</span> */}
                             </div>
                             {reviewList}
                             <ReviewLink
