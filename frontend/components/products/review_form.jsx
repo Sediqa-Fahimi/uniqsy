@@ -57,7 +57,7 @@ class ReviewForm extends React.Component {
                   />
               </div>
           </div>
-          <div className="option-btns">
+          <div className="option-btns-container">
             <button type="submit">Add review</button>
             <button onClick={this.navigateToProductShow}>Cancel</button>
           </div>
