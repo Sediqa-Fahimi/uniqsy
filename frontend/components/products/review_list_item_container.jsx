@@ -20,6 +20,8 @@ const Review = ({ review, author }) => {
               editing={false}
               starCount={5}
               value={parseFloat(rating)}
+              starColor={"#222323"}
+              emptyStarColor={"#DDDCDC"}
               /></div>
         {/* <div>Rating: {rating}</div> */}
         <p>{content}</p>

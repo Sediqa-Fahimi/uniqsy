@@ -78,6 +78,9 @@ class ProductShow extends React.Component{
                                         editing={false}
                                         starCount={5}
                                         value={parseFloat(product.average_rating)}
+                                        starColor={"#222323"}
+                                        emptyStarColor={"#DDDCDC"}
+                                        starSpacing="15px"
                                         /></span>
                                 {/* <span>Average rating: {product.average_rating}</span> */}
                             </div>
