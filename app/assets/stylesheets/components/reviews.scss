@@ -69,18 +69,22 @@
     input{
        margin-top: 15px;
        margin-bottom: 15px; 
-       border: 1px solid rgb(75, 75, 75);
+       border: 1px solid rgb(152, 151, 151);
        border-radius: 2px;
        width: 40px;
     }
     textarea{
-        border: 1px solid rgb(75, 75, 75);
+        border: 1px solid rgb(152, 151, 151);
         border-radius: 2px;
         margin-top: 15px;
         margin-bottom: 15px;
-        width: 400px;
-        height: 100px;
-        box-shadow: rgb(179, 179, 179);
+        width: 390px;
+        height: 60px;
+        padding-left: 8px;
+        padding-top: 5px;
+    }
+    textarea:hover{
+        border: 1px solid rgb(53, 52, 52);
     }
 }
 .form-div{
