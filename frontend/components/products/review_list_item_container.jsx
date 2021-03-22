@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
 import { deleteReview } from '../../actions/product_actions';
 
-const Review = ({ review, author, deleteReview, currentUser }) => {
+const Review = ({ review, author, deleteReview, userId }) => {
   const { rating, content, created_at } = review;
  
   const dateArray = new Date(created_at).toString().split(' ');
@@ -12,7 +12,7 @@ const Review = ({ review, author, deleteReview, currentUser }) => {
   const handleDelete = () =>{
     deleteReview(review.id);
   }
-  const deleteLink = currentUser.id === author.id ? <button type="button" onClick={handleDelete}>delete</button> : "";
+  const deleteLink = userId === author.id ? <button type="button" onClick={handleDelete}>delete</button> : "";
   return (
     <div className="review-item">
       <div className="review-title">

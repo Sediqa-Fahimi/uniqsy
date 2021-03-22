@@ -51,4 +51,4 @@ export const createReview = review => dispatch => {
 
 export const deleteReview = id => dispatch => {
     return APIUtil.deletereview(id).then(()=> dispatch(removeReview(id)))
-}
+};
