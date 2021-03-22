@@ -10,6 +10,10 @@ class Api::ReviewsController < ApplicationController
             render json: @review, status: :unprocessable_entity
         end
     end
+    
+    def destroy
+
+    end
 
     private
 

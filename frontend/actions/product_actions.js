@@ -3,7 +3,7 @@ import * as APIUtil from '../util/product_api_util';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
-
+export const DELETE_REVIEW = 'DELETE_REVIEW';
 
 export const receiveProducts = products => {
     return {
@@ -28,6 +28,12 @@ export const receiveReview = ({ review, average_rating, author }) => {
         author,
     }
 };
+export const removeReview = reviewId => {
+    return {
+        type: DELETE_REVIEW,
+        reviewId
+    }
+}
 
 export const fetchProducts = () => dispatch => {
     return APIUtil.fetchProducts().then(products => dispatch(receiveProducts(products)));
@@ -42,3 +48,7 @@ export const createReview = review => dispatch => (
     dispatch(receiveReview(review))
   ))
 );
+
+export const deleteReview = id => dispatch => {
+    APIUtil.deletereview(id).then(()=> dispatch(removeReview(id)))
+}

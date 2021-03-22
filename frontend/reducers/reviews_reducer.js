@@ -1,6 +1,7 @@
 import {
   RECEIVE_PRODUCT,
   RECEIVE_REVIEW,
+  DELETE_REVIEW
 } from '../actions/product_actions';
 
 const reviewsReducer = (state = {}, action) => {
@@ -11,6 +12,10 @@ const reviewsReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       const { review } = action;
       return Object.assign({}, state, { [review.id]: review });
+    case DELETE_REVIEW:
+      const newState = Object.assign({}, state);
+      delete newState[action.reviewId];
+      return newState;
     default:
       return state;
   }
