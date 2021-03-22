@@ -36,7 +36,7 @@ class ProductShow extends React.Component{
     }
 
     render(){
-        const { product, reviews } = this.props;
+        const { product, reviews, currentUser } = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
         if (!product.photoUrl) return null;
@@ -49,6 +49,11 @@ class ProductShow extends React.Component{
                 />
             )
         });
+        const reviewLink = currentUser.id === product.seller.id ? "" :   <ReviewLink 
+                                                                            component={ReviewFormContainer} 
+                                                                            to={`/products/${product.id}/review`}
+                                                                            label="Add a Review"
+                                                                        />;
         return(
             <>
                 <div className="product-show-page group">
@@ -73,7 +78,8 @@ class ProductShow extends React.Component{
                         <div className="reviews">
                             <div className="reviews-header">
                                 <h3>{reviews.length} reviews</h3>
-                                <span><StarRatingComponent 
+                                <span>
+                                    <StarRatingComponent 
                                         name="average-rating"
                                         editing={false}
                                         starCount={5}
@@ -81,15 +87,17 @@ class ProductShow extends React.Component{
                                         starColor={"#222323"}
                                         emptyStarColor={"#DDDCDC"}
                                         starSpacing="15px"
-                                        /></span>
-                                {/* <span>Average rating: {product.average_rating}</span> */}
+                                    />
+                                </span>
+                            
                             </div>
                             {reviewList}
-                            <ReviewLink
+                            {reviewLink}
+                            {/* <ReviewLink
                                 component={ReviewFormContainer}
                                 to={`/products/${product.id}/review`}
                                 label="Add a Review"
-                            />
+                            /> */}
                             <ProtectedRoute
                                 path="/products/:productId/review"
                                 component={ReviewFormContainer}

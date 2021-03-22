@@ -23,7 +23,6 @@ const Review = ({ review, author }) => {
               starColor={"#222323"}
               emptyStarColor={"#DDDCDC"}
               /></div>
-        {/* <div>Rating: {rating}</div> */}
         <p>{content}</p>
       </div>
     </div>
