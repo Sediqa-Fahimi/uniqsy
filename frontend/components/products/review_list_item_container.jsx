@@ -1,14 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
+import { deleteReview } from '../../actions/product_actions';
 
-
-const Review = ({ review, author }) => {
+const Review = ({ review, author, deleteReview, currentUser }) => {
   const { rating, content, created_at } = review;
  
   const dateArray = new Date(created_at).toString().split(' ');
   const date = `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
- 
+
+  const handleDelete = () =>{
+    deleteReview(review.id);
+  }
+  const deleteLink = currentUser.id === author.id ? <button type="button" onClick={handleDelete}>delete</button> : "";
   return (
     <div className="review-item">
       <div className="review-title">
@@ -25,6 +29,7 @@ const Review = ({ review, author }) => {
               /></div>
         <p>{content}</p>
       </div>
+      {deleteLink}
     </div>
   );
 };
@@ -35,4 +40,10 @@ const mapStateToProps = ({entities: { users }}, { review }) => {
   };
 };
 
-export default connect(mapStateToProps)(Review);
+const mapDispatchToProps = (dispatch)=>{
+  return {
+    deleteReview: reviewId => dispatch(deleteReview(reviewId))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Review);

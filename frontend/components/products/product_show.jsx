@@ -36,7 +36,7 @@ class ProductShow extends React.Component{
     }
 
     render(){
-        const { product, reviews, currentUser } = this.props;
+        const { product, reviews, currentUser} = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
         if (!product.photoUrl) return null;
@@ -45,6 +45,7 @@ class ProductShow extends React.Component{
             return (
                 <ReviewListItemContainer
                 review={review}
+                currentUser={currentUser}
                 key={review.id}
                 />
             )
