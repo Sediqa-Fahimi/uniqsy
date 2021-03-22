@@ -43,12 +43,12 @@ export const fetchProduct = id => dispatch => {
     return APIUtil.fetchProduct(id).then(payload => dispatch(receiveProduct(payload)));
 }
 
-export const createReview = review => dispatch => (
-  APIUtil.createReview(review).then(review => (
-    dispatch(receiveReview(review))
-  ))
-);
+export const createReview = review => dispatch => {
+  return APIUtil.createReview(review).then(payload => {
+    dispatch(receiveReview(payload))
+  })
+};
 
 export const deleteReview = id => dispatch => {
-    APIUtil.deletereview(id).then(()=> dispatch(removeReview(id)))
+    return APIUtil.deletereview(id).then(()=> dispatch(removeReview(id)))
 }

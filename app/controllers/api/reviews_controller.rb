@@ -13,10 +13,10 @@ class Api::ReviewsController < ApplicationController
     
     def destroy
         @review = Review.find_by(id: params[:id])
-        if @review
-            @review.destroy
+        if @review.destroy
+            render :show
         else
-            render json: @review.errors.full_messages, status: :unprocessable_entity
+            render json: @review.errors.full_messages, status: 422
         end
     end
 
