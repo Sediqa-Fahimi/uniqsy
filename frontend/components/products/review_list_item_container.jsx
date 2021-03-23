@@ -13,19 +13,19 @@ const Review = ({ review, author, deleteReview, userId }) => {
   const handleDelete = () =>{
     deleteReview(review.id).then(()=> window.location.reload());
   }
-  const handleEdit = () =>{
+  // const handleEdit = () =>{
     
-  }
+  // }
   const deleteLink = userId === author.id ? <button 
                                               type="button" 
                                               onClick={handleDelete}
                                               className="review-delete-btn"
                                               >Delete</button> : "";
-  const editLink = userId === author.id ? <button 
-                                              type="button" 
-                                              onClick={handleEdit}
-                                              className="review-edit-btn"
-                                              >Edit</button> : "";
+  // const editLink = userId === author.id ? <button 
+  //                                             type="button" 
+  //                                             onClick={handleEdit}
+  //                                             className="review-edit-btn"
+  //                                             >Edit</button> : "";
   return (
     <div className="review-item">
       <div className="review-title">
@@ -43,7 +43,7 @@ const Review = ({ review, author, deleteReview, userId }) => {
         <p>{content}</p>
       </div>
       {deleteLink}
-      {editLink}
+      {/* {editLink} */}
     </div>
   );
 };
