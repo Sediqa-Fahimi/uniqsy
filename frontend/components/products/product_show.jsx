@@ -47,6 +47,7 @@ class ProductShow extends React.Component{
                 review={review}
                 userId={userId}
                 key={review.id}
+                productId={product.id}
                 />
             )
         });
@@ -94,11 +95,6 @@ class ProductShow extends React.Component{
                             </div>
                             {reviewList}
                             {reviewLink}
-                            {/* <ReviewLink
-                                component={ReviewFormContainer}
-                                to={`/products/${product.id}/review`}
-                                label="Add a Review"
-                            /> */}
                             <ProtectedRoute
                                 path="/products/:productId/review"
                                 component={ReviewFormContainer}
