@@ -22,19 +22,21 @@ class Review extends React.Component {
       this.props.history.push(`/products/${productId}/reviews/${review.id}/edit`);
     }
     render(){
-      const {review, author, userId, productId, match, history} = this.props;
+      const {review, author, userId, productId, reviewId, history} = this.props;
       const { rating, content, created_at } = review;
 
       const dateArray = new Date(created_at).toString().split(' ');
       const date = `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
-      
+
       const deleteLink = userId === author.id ? <button 
                                               type="button" 
                                               onClick={this.handleDelete}
                                               className="review-delete-btn"
                                               >Delete</button> : "";
 
-      const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} onClick={this.updateHistory}>Edit</Link> : "";
+      // const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} onClick={this.updateHistory}>Edit</Link> : "";
+      const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} >Edit</Link> : "";
+   
       return (
         <div className="review-item">
           <div className="review-title">
@@ -55,8 +57,8 @@ class Review extends React.Component {
           {editLink}
           {/* <Route path="/products/:productId/reviews/:reviewId/edit" component={reviewFormContainer} /> */}
 
-          <Route path="/products/:productId/reviews/:reviewId/edit" render={(
-            review.id === match.params.reviewId ? (
+          <Route path="/products/:productId/reviews/:reviewId/edit" render={()=> (
+            review.id === reviewId ? (
               <reviewFormContainer />
             ): ""
           )} />
@@ -68,9 +70,10 @@ class Review extends React.Component {
 
 
 
-const mapStateToProps = ({entities: { users }}, {review}) => {
+const mapStateToProps = ({entities: { users }}, {review, match}) => {
   return {
-    author: users[review.author_id]
+    author: users[review.author_id],
+    reviewId: match.params.reviewId
   };
 };
 
