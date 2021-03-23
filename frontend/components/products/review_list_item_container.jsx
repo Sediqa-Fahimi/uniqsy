@@ -10,7 +10,7 @@ const Review = ({ review, author, deleteReview, userId }) => {
   const date = `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
 
   const handleDelete = () =>{
-    deleteReview(review.id);
+    deleteReview(review.id).then(()=> window.location.reload());
   }
   const deleteLink = userId === author.id ? <button type="button" onClick={handleDelete}>delete</button> : "";
   return (
