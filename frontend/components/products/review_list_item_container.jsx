@@ -4,6 +4,7 @@ import StarRatingComponent from 'react-star-rating-component';
 import { deleteReview } from '../../actions/product_actions';
 
 const Review = ({ review, author, deleteReview, userId }) => {
+ 
   const { rating, content, created_at } = review;
  
   const dateArray = new Date(created_at).toString().split(' ');
