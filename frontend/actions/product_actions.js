@@ -28,7 +28,7 @@ export const receiveReview = ({ review, average_rating, author }) => {
         author,
     }
 };
-export const removeReview = review => {
+export const removeReview = ({review}) => {
     return {
         type: DELETE_REVIEW,
         reviewId: review.id
@@ -50,7 +50,7 @@ export const createReview = review => dispatch => {
 };
 
 export const deleteReview = reviewId => dispatch => {
-    return APIUtil.deletereview(reviewId).then((review)=> dispatch(removeReview(review)))
+    return APIUtil.deletereview(reviewId).then((payload)=> dispatch(removeReview(payload)))
 };
 
 export const updateReview = (review) => dispatch => {

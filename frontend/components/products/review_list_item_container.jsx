@@ -2,11 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
 import { deleteReview, updateReview } from '../../actions/product_actions';
-import { Link, Route } from 'react-router-dom';
-import editReviewFormContainer from './edit_review_form_container';
 import { withRouter } from 'react-router-dom';
 import EditReviewForm from './edit_review_form';
-
 
 
 class Review extends React.Component {
@@ -20,6 +17,7 @@ class Review extends React.Component {
     handleDelete(){
       const {review} = this.props;
       this.props.deleteReview(review.id).then(()=> window.location.reload());
+      // this.props.deleteReview(review.id);
     }
     handleEdit(){
       if(this.state.editForm === 'review-form-hide'){

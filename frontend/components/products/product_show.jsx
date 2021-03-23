@@ -19,6 +19,7 @@ class ProductShow extends React.Component{
         const productId = this.props.productId;
         this.props.fetchProduct(productId);
     }
+  
     handleClick(e){
         e.preventDefault();
         const { currentUser, openModal, addCartItem, updateCartItem, productId, userId, cartitemId} = this.props;
@@ -36,7 +37,7 @@ class ProductShow extends React.Component{
     }
 
     render(){
-        const { product, reviews, userId} = this.props;
+        const { product, reviews, userId, productId} = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
         if (!product.photoUrl) return null;

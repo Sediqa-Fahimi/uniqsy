@@ -10,9 +10,9 @@ class EditReviewForm extends React.Component {
     this.navigateToProductShow = this.navigateToProductShow.bind(this);
   }
 
-  navigateToProductShow() {
+  navigateToProductShow(e) {
     this.props.handleEdit();
-    const url = `/products/${this.props.match.params.productId}`
+    const url = `/products/${this.props.match.params.productId}`;
     this.props.history.push(url);
   }
 
@@ -66,7 +66,7 @@ class EditReviewForm extends React.Component {
           </div>
           <div className="option-btns-container">
             <button type="submit">Update review</button>
-            <button onClick={this.navigateToProductShow}>Cancel</button>
+            <button type="button" onClick={this.navigateToProductShow}>Cancel</button>
           </div>
         </form>
       </div>
