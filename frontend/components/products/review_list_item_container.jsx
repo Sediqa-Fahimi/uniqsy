@@ -1,28 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
-import { deleteReview } from '../../actions/product_actions';
+import { deleteReview, updateReview } from '../../actions/product_actions';
 import { Link, Route } from 'react-router-dom';
-import reviewFormContainer from './review_form_container';
+import editReviewFormContainer from './edit_review_form_container';
 import { withRouter } from 'react-router-dom';
+import EditReviewForm from './edit_review_form';
+
 
 
 class Review extends React.Component {
     constructor(props){
       super(props);
+      this.state = { editForm: 'review-form-hide'}
       this.handleDelete = this.handleDelete.bind(this);
       this.updateHistory = this.updateHistory.bind(this);
+      this.handleEdit = this.handleEdit.bind(this);
     }
     handleDelete(){
       const {review} = this.props;
       this.props.deleteReview(review.id).then(()=> window.location.reload());
+    }
+    handleEdit(){
+      if(this.state.editForm === 'review-form-hide'){
+        this.setState({editForm: 'review-form'});
+      } else {
+        this.setState({editForm: 'review-form-hide'});
+      }
     }
     updateHistory(){
       const {review, productId} = this.props;
       this.props.history.push(`/products/${productId}/reviews/${review.id}/edit`);
     }
     render(){
-      const {review, author, userId, productId, reviewId, history} = this.props;
+      const {review, author, userId, updateReview, productId, reviewId, history} = this.props;
       const { rating, content, created_at } = review;
 
       const dateArray = new Date(created_at).toString().split(' ');
@@ -35,8 +46,13 @@ class Review extends React.Component {
                                               >Delete</button> : "";
 
       // const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} onClick={this.updateHistory}>Edit</Link> : "";
-      const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} >Edit</Link> : "";
-   
+      // const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} >Edit</Link> : "";
+      const editLink = userId === author.id ? <button 
+                                              type="button" 
+                                              onClick={this.handleEdit}
+                                              className="review-delete-btn"
+                                              >Edit</button> : "";
+      const clsName = this.state.editForm;
       return (
         <div className="review-item">
           <div className="review-title">
@@ -55,13 +71,15 @@ class Review extends React.Component {
           </div>
           {deleteLink}
           {editLink}
-          {/* <Route path="/products/:productId/reviews/:reviewId/edit" component={reviewFormContainer} /> */}
+          {/* <Route path="/products/:productId/reviews/:reviewId/edit" component={editReviewFormContainer} /> */}
 
-          <Route path="/products/:productId/reviews/:reviewId/edit" render={()=> (
+          <EditReviewForm review={review} updateReview={updateReview} clsName={clsName} handleEdit={this.handleEdit}/>
+
+          {/* <Route path="/products/:productId/reviews/:reviewId/edit" render={()=> (
             review.id === reviewId ? (
               <reviewFormContainer />
             ): ""
-          )} />
+          )} /> */}
         </div>
 
       );
@@ -70,16 +88,16 @@ class Review extends React.Component {
 
 
 
-const mapStateToProps = ({entities: { users }}, {review, match}) => {
+const mapStateToProps = ({entities: { users }}, {review}) => {
   return {
-    author: users[review.author_id],
-    reviewId: match.params.reviewId
+    author: users[review.author_id]
   };
 };
 
 const mapDispatchToProps = (dispatch)=>{
   return {
-    deleteReview: reviewId => dispatch(deleteReview(reviewId))
+    deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+    updateReview: review => dispatch(updateReview(review))
   }
 }
 
