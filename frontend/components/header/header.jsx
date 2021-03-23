@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 const Header = ({ currentUser, logout, openModal, history }) => {
 
     const redirect = () => {
-        logout().then(()=> history.replace(`/`));
+        logout().then(()=> history.push(`/`));
     }
 
     const sessionLink = () => (

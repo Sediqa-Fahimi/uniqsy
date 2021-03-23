@@ -4,6 +4,7 @@ import { fetchProduct } from '../../actions/product_actions';
 import { selectProduct, checkCartItem, selectReviewsForProduct } from '../../reducers/selectors';
 import { addCartItem, updateCartItem } from '../../actions/cartitem_actions';
 import { openModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, { match } ) => {
     const productId = parseInt(match.params.productId);
@@ -31,4 +32,4 @@ const mapDispatchToProps = (dispatch,ownProps) => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProductShow);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ProductShow));
