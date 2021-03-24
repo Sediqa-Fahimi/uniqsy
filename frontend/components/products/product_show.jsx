@@ -37,18 +37,20 @@ class ProductShow extends React.Component{
     }
 
     render(){
+    
         const { product, reviews, userId, productId} = this.props;
         if (product === undefined) return null;
         if (product.seller === undefined) return null;
         if (!product.photoUrl) return null;
         if (!product.photoUrls) return null;
+        if(reviews.length === 0) return null;
         const reviewList = reviews.map(review => {
             return (
                 <ReviewListItemContainer
                 review={review}
                 userId={userId}
                 key={review.id}
-                productId={product.id}
+                productId={productId}
                 />
             )
         });
