@@ -33,7 +33,6 @@ Uniqsy is an online shopping website which is a self implemented version of the 
 1. #### User Authentication
 Users can login and logout to an existing account. Users can sign up for a new account. A guest account is provided for browsing the website. 
 
-<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/userauth.gif" alt="AuthDemo" width="500"/>
 
 
 2. #### Product listing
