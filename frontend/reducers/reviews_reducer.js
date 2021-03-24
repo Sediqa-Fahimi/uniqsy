@@ -13,11 +13,9 @@ const reviewsReducer = (state = {}, action) => {
       let nState = Object.assign({}, state);
       nState[action.review.id] = action.review;
       return nState;
-      // const { review } = action;
-      // return Object.assign({}, state, { [review.id]: review });
     case DELETE_REVIEW:
       let newState = Object.assign({}, state);
-      delete newState[action.reviewId];
+      delete newState[action.review.id];
       return newState;
     default:
       return state;

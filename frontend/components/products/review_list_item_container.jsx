@@ -11,12 +11,12 @@ class Review extends React.Component {
       super(props);
       this.state = { editForm: 'review-form-hide'}
       this.handleDelete = this.handleDelete.bind(this);
-      this.updateHistory = this.updateHistory.bind(this);
       this.handleEdit = this.handleEdit.bind(this);
     }
     handleDelete(){
       const {review} = this.props;
-      this.props.deleteReview(review.id).then(()=> window.location.reload());
+      this.props.deleteReview(review.id);
+      // .then(()=> window.location.reload());
       // this.props.deleteReview(review.id);
     }
     handleEdit(){
@@ -26,12 +26,8 @@ class Review extends React.Component {
         this.setState({editForm: 'review-form-hide'});
       }
     }
-    updateHistory(){
-      const {review, productId} = this.props;
-      this.props.history.push(`/products/${productId}/reviews/${review.id}/edit`);
-    }
     render(){
-      const {review, author, userId, updateReview, productId, reviewId, history} = this.props;
+      const {review, author, userId, updateReview } = this.props;
       const { rating, content, created_at } = review;
 
       const dateArray = new Date(created_at).toString().split(' ');
@@ -43,8 +39,6 @@ class Review extends React.Component {
                                               className="review-delete-btn"
                                               >Delete</button> : "";
 
-      // const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} onClick={this.updateHistory}>Edit</Link> : "";
-      // const editLink = userId === author.id ? <Link to={`/products/${productId}/reviews/${review.id}/edit`} >Edit</Link> : "";
       const editLink = userId === author.id ? <button 
                                               type="button" 
                                               onClick={this.handleEdit}
@@ -69,15 +63,9 @@ class Review extends React.Component {
           </div>
           {deleteLink}
           {editLink}
-          {/* <Route path="/products/:productId/reviews/:reviewId/edit" component={editReviewFormContainer} /> */}
 
-          <EditReviewForm review={review} updateReview={updateReview} clsName={clsName} handleEdit={this.handleEdit}/>
+          <EditReviewForm review={review} updateReview={updateReview} clsName={clsName} handleEdit={this.handleEdit} key={review.id}/>
 
-          {/* <Route path="/products/:productId/reviews/:reviewId/edit" render={()=> (
-            review.id === reviewId ? (
-              <reviewFormContainer />
-            ): ""
-          )} /> */}
         </div>
 
       );
@@ -88,7 +76,8 @@ class Review extends React.Component {
 
 const mapStateToProps = ({entities: { users }}, {review}) => {
   return {
-    author: users[review.author_id]
+    author: users[review.author_id],
+    review
   };
 };
 

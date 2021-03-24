@@ -31,7 +31,7 @@ export const receiveReview = ({ review, average_rating, author }) => {
 export const removeReview = ({review}) => {
     return {
         type: DELETE_REVIEW,
-        reviewId: review.id
+        review
     }
 }
 

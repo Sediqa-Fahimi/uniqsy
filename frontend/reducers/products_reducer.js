@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCTS, RECEIVE_PRODUCT, RECEIVE_REVIEW } from '../actions/product_actions';
+import { RECEIVE_PRODUCTS, RECEIVE_PRODUCT, RECEIVE_REVIEW, DELETE_REVIEW } from '../actions/product_actions';
 
 const productsReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -19,6 +19,13 @@ const productsReducer = (state = {}, action) => {
             }
             newState[review.product_id].average_rating = average_rating;
             return newState;
+        case DELETE_REVIEW:
+            let newStat = Object.assign({}, state);
+            let idx = newStat[action.review.product_id].reviewIds.indexOf(action.review.id);
+            if(idx > -1){
+                delete newStat[action.review.product_id].reviewIds[idx];
+            }
+            return newStat;
         default:
             return state;
     }

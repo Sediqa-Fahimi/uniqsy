@@ -44,13 +44,12 @@ class ProductShow extends React.Component{
         if (!product.photoUrl) return null;
         if (!product.photoUrls) return null;
         if(reviews.length === 0) return null;
-        const reviewList = reviews.map(review => {
+        const reviewList = reviews.map((review,i) => {
             return (
                 <ReviewListItemContainer
                 review={review}
                 userId={userId}
-                key={review.id}
-                productId={productId}
+                key={i}
                 />
             )
         });
