@@ -5,7 +5,7 @@
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/homepage.png" alt="Home page" width="700"/>
 
 
-## Introduction
+## Overview
 
 Uniqsy is an online shopping website which is a self implemented version of the original site Etsy.com. It provides a platform for independent businesses to sell their handmade products online. Customers can search, find and order these unique arts and crafts. The website also provides customers with the ability to write reviews.
 
