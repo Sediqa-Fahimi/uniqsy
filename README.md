@@ -124,8 +124,8 @@ end
 ```
 
 
-4. #### Reviews (coming soon)
-Reviews live on the product show page, they are viewable by anyone. Only customers who purchased the product can add a review. Sellers will not be able to add reviews to their own product. Users can update and delete their reviews. They also need to be signed in before they can change a review.
+4. #### Reviews
+Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
 
 
 5. #### Search (coming soon)
