@@ -38,7 +38,6 @@ class EditReviewForm extends React.Component {
     const { clsName } = this.props;
     return (
       <div className={clsName}>
-      {/* <div className="review-form"> */}
         <form onSubmit={this.handleSubmit} className="review-F">
           <div className="form-div">
             <label>Rating</label>
