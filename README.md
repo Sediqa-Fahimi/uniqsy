@@ -2,7 +2,7 @@
 
 # uniqsy
 
-<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/uniqsy-img.png" alt="Home page" width="800" height="600"/>
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/homepage.png" alt="Home page" width="600" height="600"/>
 
 
 ## Introduction
