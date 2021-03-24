@@ -19,8 +19,11 @@ Uniqsy is an online shopping website which is a self implemented version of the 
 ## **Technologies used:**
  
 **Database**: **PostgreSQL**.
+
 **Backend**: **Ruby on Rails** (web application framework).
+
 **Frontend**: **React**, **Redux**.
+
 **Image storage**: **AWS**
 
 
