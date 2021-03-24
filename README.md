@@ -47,7 +47,15 @@ Users are required to login before they can add items to their shopping cart in 
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shoppingcart.gif" alt="Shopping cart demo" width="500"/>
 
 
-### Challenges
+4. #### Reviews
+Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
+
+
+5. #### Search (coming soon)
+Users can search any product in the search box provided. Users can see matching products as they search. 
+
+
+#### Challenges
 Preventing multiple entries of the same item into the shopping cart and updating the quantity from product show page and from cart show page was a challenge for me. I decided to accomplish this by sending an increment flag via the ajax call to the rails update action controller function to be checked for either increasing or updating the quantity. I divided the logic and separated the concern into each page's functionality. The Add to Cart button in the product show page will increase the quantity while the select tag in cart show page will update the final quantity number for immediate checkout or for future checkout. Both increaseing and updating changes are being reflected into the DB. The flag is being sent as an additional data in the params to the update action controller, then the update action controller will only increment the quantity if increase == true (update from product show page) or actually update the quantity if increase == false (update from cart show page).
 
 
@@ -126,10 +134,3 @@ def update
 end
 ```
 
-
-4. #### Reviews
-Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
-
-
-5. #### Search (coming soon)
-Users can search any product in the search box provided. Users can see matching products as they search. 
