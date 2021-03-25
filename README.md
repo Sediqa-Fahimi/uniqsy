@@ -44,6 +44,8 @@ Homepage lists variety of products in different sections with unique styling. Us
 
 Users are required to login before they can add items to their shopping cart in order to keep a record of their items in the cart after they logout and when they log back in. Users can view their shopping cart. They can remove items from the shopping cart. They can change the quantity of items in the shopping cart and have the total price calculated. 
 
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shopping_cart_demo.gif" alt="shopping cart" width="600" />
+
 
 4. #### Reviews
 Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
