@@ -4,6 +4,7 @@ import { withRouter, Link } from 'react-router-dom';
 class Search extends React.Component{
     constructor(props){
         super(props);
+        this.container = React.createRef();
         this.state = {
             inquiry: '',
             display: false,
@@ -12,9 +13,23 @@ class Search extends React.Component{
         this.toggleDisplay = this.toggleDisplay.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+    componentDidMount(){
+        document.addEventListener("mousedown", this.handleClickOutside);
+    }
+    componentWillUnmount(){
+        document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+    handleClickOutside(e){
+        if(this.container.current && !this.container.current.contains(e.target)){
+            this.setState({display: false});
+        }
     }
     toggleDisplay(){
-        this.setState({display: !this.state.display});
+        if(!this.state.display){
+            this.setState({display: !this.state.display});
+        }
     }
 
     handleInput(e){
@@ -59,7 +74,7 @@ class Search extends React.Component{
             )
         })
         return (
-            <div className="search-container" >
+            <div className="search-container" ref={this.container}>
                 <input 
                     type="text" 
                     className="search-input" 
@@ -67,7 +82,7 @@ class Search extends React.Component{
                     onChange={this.handleInput}
                     value={this.state.inquiry}
                     onFocus={this.toggleDisplay}
-                    onBlur={this.toggleDisplay}
+                    // onBlur={this.toggleDisplay}
                     />
                 <button className="search-btn" >
                     <center>
@@ -75,16 +90,24 @@ class Search extends React.Component{
                     </center>
                 </button>
 
-                <Dropdown 
+                {/* <Dropdown 
                     className={`search-dropdown ${this.state.display ? "" : "hidden"}`}
                     
-                    />
+                    /> */}
 
                 {/* <ul className={`search-dropdown ${this.state.display ? "" : "hidden"}`}>
                     <ul className="results">
                         {results}
                     </ul>
                 </ul> */}
+                {this.state.display && (
+                    <ul className="search-dropdown">
+                        <ul className="results">
+                            {results}
+                        </ul>
+                    </ul>
+                )}
+                
             </div>
         )
         
