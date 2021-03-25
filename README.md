@@ -44,7 +44,7 @@ Homepage lists variety of products in different sections with unique styling. Us
 
 Users are required to login before they can add items to their shopping cart in order to keep a record of their items in the cart after they logout and when they log back in. Users can view their shopping cart. They can remove items from the shopping cart. They can change the quantity of items in the shopping cart and have the total price calculated. 
 
-<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shopping_cart_demo.gif" alt="shopping cart" width="600" />
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shopping_cart_demo.gif" alt="shopping cart" width="700" />
 
 
 4. #### Reviews
