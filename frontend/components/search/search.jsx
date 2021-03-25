@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 
 class Search extends React.Component{
     constructor(props){
@@ -8,29 +9,57 @@ class Search extends React.Component{
             display: false,
 
         }
+        this.toggleDisplay = this.toggleDisplay.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
     toggleDisplay(){
         this.setState({display: !this.state.display});
     }
+
+    handleInput(e){
+        this.setState({inquiry: e.currentTarget.value});
+    }
+
     matches(){
         const matches = [];
-        if(this.state.inquiry.length === 0){
-            return this.props.titles.slice(6);
+        const { products } = this.props;
+        const { inquiry } = this.state;
+        if(inquiry.length === 0){
+            return products.slice(0,6);
         }
 
-        this.props.titles.forEeach(title => {
-            
-        })
+        products.forEach(product => {
+            if(product.title.toLowerCase().includes(inquiry.toLowerCase())){
+                matches.push(product);
+            }
+        });
+
+        if(matches.length === 0){
+            matches.push({id: null, title: "No matches found"});
+        }
+
+        return matches;
+    }
+
+    handleSelect(e){
+        const title = e.currentTarget.innerText;
+        this.setState({inquiry: title});
     }
 
     render(){
         const results = this.matches().map((result,i) =>{
             return (
-                <li key={i} onClick={this.handleSelect}>{result}</li>
+                <li key={i} ><Link 
+                                to={`/products/${result.id}`} 
+                                onClick={this.handleSelect} 
+                                className="search-link"
+                                >{result.title}</Link></li>
+                
             )
         })
         return (
-            <div className="search-container">
+            <div className="search-container" >
                 <input 
                     type="text" 
                     className="search-input" 
@@ -38,6 +67,7 @@ class Search extends React.Component{
                     onChange={this.handleInput}
                     value={this.state.inquiry}
                     onFocus={this.toggleDisplay}
+                    onBlur={this.toggleDisplay}
                     />
                 <button className="search-btn" >
                     <center>
@@ -45,26 +75,21 @@ class Search extends React.Component{
                     </center>
                 </button>
 
-                <ul className={`search-dropdown ${this.state.display ? "" : "hidden"}`}>
-                    {results}
-                    {/* <ul className={`popular `}>
-                        <span className="dropdown-subtitle">Popular</span>
-                        <li><a href="#">wall decore</a></li>
-                        <li><a href="#">prints</a></li>
-                        <li><a href="#">necklace</a></li>
-                        <li><a href="#">wreath</a></li>
-                    </ul> */}
+                <Dropdown 
+                    className={`search-dropdown ${this.state.display ? "" : "hidden"}`}
                     
-                    {/* <ul>
-                        {searchResults}
-                    </ul> */}
-                
-                </ul>
+                    />
+
+                {/* <ul className={`search-dropdown ${this.state.display ? "" : "hidden"}`}>
+                    <ul className="results">
+                        {results}
+                    </ul>
+                </ul> */}
             </div>
         )
         
     }
 }
 
-export default Search;
+export default withRouter(Search);
 

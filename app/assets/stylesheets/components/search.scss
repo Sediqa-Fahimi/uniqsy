@@ -80,29 +80,29 @@
 	box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.09);
 	font-weight: initial;
 
-	.popular li{
+	.results li{
 		margin: 5px 0;
         cursor: pointer;
         border-radius: 3px;
         font-size: 14px;
 	}
-	.popular  {
-		a {
+	.results  {
+		Link {
 			text-decoration: none;
 		}
 		li:hover {
 			background-color: rgb(228, 227, 227);
 		}
 	}
-	a {
+	.search-link {
 		display: block;
 		padding: 5px 5px;
 	}
 }
-.dropdown-subtitle {
-    font-weight: bold;
-	font-family: sans-serif;
-	font-size: 15px;
-	margin: 10px 5px;
-	display: block;
-}
+// .dropdown-subtitle {
+//     font-weight: bold;
+// 	font-family: sans-serif;
+// 	font-size: 15px;
+// 	margin: 10px 5px;
+// 	display: block;
+// }
