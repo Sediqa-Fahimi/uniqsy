@@ -3,7 +3,7 @@ import HeaderContainer from './header/header_container';
 import Modal from './modal/modal';
 import { Link, Route, Switch ,Redirect} from 'react-router-dom';
 import ProductIndexContainer from './products/product_index_container';
-import SearchContainer from './products/search';
+import SearchContainer from './search/search_container';
 import ProductShowContainer from './products/product_show_container';
 import CartShowContainer from './cart/cart_show_container';
 import { connect } from 'react-redux';
