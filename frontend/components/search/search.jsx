@@ -8,14 +8,15 @@ class Search extends React.Component{
         this.state = {
             inquiry: '',
             display: false,
-
         }
         this.toggleDisplay = this.toggleDisplay.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.clearSearch = this.clearSearch.bind(this);
     }
     componentDidMount(){
+        // this.props.fetchProducts();
         document.addEventListener("mousedown", this.handleClickOutside);
     }
     componentWillUnmount(){
@@ -35,7 +36,14 @@ class Search extends React.Component{
     handleInput(e){
         this.setState({inquiry: e.currentTarget.value});
     }
+    // handleSearch(e){
+    //     e.preventDefault();
+    //     this.setState({inquiry: e.target.value}, ()=>{
+    //         if(this.state.inquiry.length >= 1){
 
+    //         }
+    //     })
+    // }
     matches(){
         const matches = [];
         const { products } = this.props;
@@ -59,10 +67,15 @@ class Search extends React.Component{
 
     handleSelect(e){
         const title = e.currentTarget.innerText;
-        this.setState({inquiry: title});
+        this.setState({inquiry: title, display: false});
+    }
+
+    clearSearch(){
+        this.setState({inquiry: '', display: false});
     }
 
     render(){
+        const { inquiry } = this.state;
         const results = this.matches().map((result,i) =>{
             return (
                 <li key={i} ><Link 
@@ -75,31 +88,28 @@ class Search extends React.Component{
         })
         return (
             <div className="search-container" ref={this.container}>
-                <input 
-                    type="text" 
-                    className="search-input" 
-                    placeholder="Search for anything"
-                    onChange={this.handleInput}
-                    value={this.state.inquiry}
-                    onFocus={this.toggleDisplay}
-                    // onBlur={this.toggleDisplay}
+                {/* <form onSubmit={this.handleSearch}> */}
+                    <input 
+                        type="text" 
+                        className="search-input" 
+                        placeholder="Search for anything"
+                        onChange={this.handleInput}
+                        value={inquiry}
+                        onFocus={this.toggleDisplay}
                     />
-                <button className="search-btn" >
-                    <center>
-                        <img src={window.searchURL} alt="" className="search-icon" />
-                    </center>
-                </button>
+                    <div className="clr-btn-container">
+                        <button onClick={this.clearSearch} 
+                            className={`clear-search-btn ${inquiry.length ? "" : "hidden"}`}>
+                            X
+                        </button>
+                    </div>
+                    <button type="submit" className="search-btn" >
+                        <center>
+                            <img src={window.searchURL} alt="" className="search-icon" />
+                        </center>
+                    </button>
+                {/* </form> */}
 
-                {/* <Dropdown 
-                    className={`search-dropdown ${this.state.display ? "" : "hidden"}`}
-                    
-                    /> */}
-
-                {/* <ul className={`search-dropdown ${this.state.display ? "" : "hidden"}`}>
-                    <ul className="results">
-                        {results}
-                    </ul>
-                </ul> */}
                 {this.state.display && (
                     <ul className="search-dropdown">
                         <ul className="results">
