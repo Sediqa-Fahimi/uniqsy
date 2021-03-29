@@ -7,7 +7,7 @@
 
 ## Overview
 
-Uniqsy is an online shopping website which is a self implemented version of the original site Etsy.com. It provides a platform for independent businesses to sell their handmade products online. Customers can search, find and order these unique arts and crafts. The website also provides customers with the ability to write reviews.
+Uniqsy is a self implemented version of the original site Etsy.com, an E-Commerce platform. Independent businesses can sell their handmade products online. Customers can search, view and add these unique arts and crafts to their shopping cart where they can keep track of their desired items. The website also provides customers with the ability to write reviews.
 
 
 ## Demo
