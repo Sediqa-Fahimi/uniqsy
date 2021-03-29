@@ -10,6 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Martel&display=swap" rel="stylesheet">
     <%= favicon_link_tag 'favicon.png' %>
+
+    <meta property="og:title" content="Uniqsy" />
+    <meta property='og:image' content="<%= image_url('../../assets/images/homepage.png') %>"/>
+    <meta property="og:description"
+      content="A self implemented version of the original site Etsy.com, an E-Commerce platform."
+    />
+    <meta property="og:url"
+      content="https://uniqsy.herokuapp.com/#/"
+    />
+
     <script type="text/javascript">
       window.brentURL = "<%= image_url('samplesmall.jpg') %>";
     </script>
