@@ -51,8 +51,8 @@ Users are required to login before they can add items to their shopping cart in 
 Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
 
 
-5. #### Search (coming soon)
-Users can search any product in the search box provided. Users can see matching products as they search. 
+5. #### Search 
+Users are able to search any product in the search box provided. Matching products will display and complete automatically as suggestions when they type. Selecting a suggestion directs user to the show page of that product.
 
 
 ## Challenges
