@@ -47,8 +47,13 @@ Users are required to login before they can add items to their shopping cart in 
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/shopping_cart_demo.gif" alt="shopping cart" width="700" />
 
 
+
 4. #### Reviews
 Reviews of a product are displayed on that product show page, they are publicly available to read. A user must sign in to add a review. Once a user creates a review she/he can edit or delete thier review/s. If the signed in user is the products's seller, she/he will not be able to add review to their own product.
+
+
+
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/reviews-feature.png" alt="reviews" />
 
 
 
@@ -58,6 +63,7 @@ Users are able to search any product in the search box provided. Matching produc
 
 
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/search-feature.png" alt="search" />
+
 
 
 ## Challenges
