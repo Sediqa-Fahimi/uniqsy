@@ -136,8 +136,11 @@ class ProductIndex extends React.Component{
                         </div>
                     </div>
                     <div className="question-section">
-                        <h3>Have a question? Well, we’ve got some answers.</h3>
-                        <button className="help-btn">Go to Help Center</button>
+                
+                        <h3>Contact me</h3>
+                    
+                        <a href="https://www.linkedin.com/in/sediqafahimi/">Linkedin</a>
+                        <a href="https://github.com/Sediqa-Fahimi">GitHub</a>
                     </div>
 
                     <img src={window.blueCircleURL} alt="" className="blue-circle-png" />

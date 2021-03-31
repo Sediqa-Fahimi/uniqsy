@@ -16,7 +16,6 @@ class Search extends React.Component{
         this.clearSearch = this.clearSearch.bind(this);
     }
     componentDidMount(){
-        // this.props.fetchProducts();
         document.addEventListener("mousedown", this.handleClickOutside);
     }
     componentWillUnmount(){
@@ -36,14 +35,7 @@ class Search extends React.Component{
     handleInput(e){
         this.setState({inquiry: e.currentTarget.value});
     }
-    // handleSearch(e){
-    //     e.preventDefault();
-    //     this.setState({inquiry: e.target.value}, ()=>{
-    //         if(this.state.inquiry.length >= 1){
 
-    //         }
-    //     })
-    // }
     matches(){
         const matches = [];
         const { products } = this.props;
