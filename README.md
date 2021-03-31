@@ -62,7 +62,9 @@ Users are able to search any product in the search box provided. Matching produc
 
 
 
+
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/search-feature.png" alt="search" />
+
 
 
 
@@ -144,4 +146,14 @@ def update
     end
 end
 ```
+
+
+
+#### To run Locally, run the following commands first:
+
+\> bundle install  
+\> bundle exec rails db:setup  
+\> npm install  
+\> npm run webpack  
+\> rails s
 
