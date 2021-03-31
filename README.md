@@ -53,21 +53,18 @@ Reviews of a product are displayed on that product show page, they are publicly 
 
 
 
-<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/reviews-feature.png" alt="reviews" />
+<img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/reviews-feature.png" alt="reviews" width="700"/>
 
 
 
 5. #### Search 
-Users are able to search any product in the search box provided. Matching products will display and complete automatically as suggestions when they type. Selecting a suggestion directs user to the show page of that product.
-
-
-
+Users are able to search any product in the search box provided. Matching products will display and complete automatically as suggestions when they type. Selecting a suggestion directs user to the show page of that product.  
+  
+  
 
 <img src="https://github.com/Sediqa-Fahimi/uniqsy/blob/main/app/assets/images/search-feature.png" alt="search" />
 
-
-
-
+  
 ## Challenges
 Preventing multiple entries of the same item into the shopping cart and updating the quantity from product show page and from cart show page was a challenge for me. I decided to accomplish this by first checking if the current user already has this item in her/his cart and if it has the item's quantity will be updated by sending an increment flag via the ajax call to the rails update action controller. This function will check again for either increasing or updating(replacing) the quantity. I divided the logic and separated the concern into each page's functionality. The Add to Cart button in the product show page will increase the quantity while the select tag in cart show page will update the final quantity number for immediate checkout or for future checkout. Both increaseing and updating changes are being reflected into the DB. The flag is being sent as an additional data in the params to the update action controller, then the update action controller will only increment the quantity if increase == true (update from product show page) or actually update the quantity if increase == false (update from cart show page).
 
