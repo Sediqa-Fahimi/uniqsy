@@ -13,16 +13,17 @@ class CartShow extends React.Component {
     }
 
     render() {
-        const items = this.props.items.map(item => {
+        const {items, updateCartItem, deleteCartItem } = this.props;
+        const cartItems = items.map(item => {
             return (
                 <CartItem item={item} key={item.id} 
-                updateCartItem={this.props.updateCartItem}
-                deleteCartItem={this.props.deleteCartItem}/>
+                updateCartItem={updateCartItem}
+                deleteCartItem={deleteCartItem}/>
             )
         });
         let total = 0.0;
-        if(this.props.items.length != 0){
-            this.props.items.forEach(item => total += parseFloat(item.total_price));
+        if(items.length != 0){
+            items.forEach(item => total += parseFloat(item.total_price));
         }
         const checkout = total === 0.0 ? "" : <>
                                                 <div>
@@ -31,11 +32,11 @@ class CartShow extends React.Component {
                                                         <input type="radio" defaultChecked name="radio"/>
                                                         <span className="checkmark"></span>
                                                     </label>
-                                                    <label className="container"><img src={window.window.mastercardURL} alt="" />
+                                                    <label className="container"><img src={window.mastercardURL} alt="" />
                                                         <input type="radio" name="radio"/>
                                                         <span className="checkmark"></span>
                                                     </label>
-                                                    <label className="container"><img src={visaURL} alt="" />
+                                                    <label className="container"><img src={window.visaURL} alt="" />
                                                         <input type="radio" name="radio"/>
                                                         <span className="checkmark"></span>
                                                     </label>
@@ -43,7 +44,7 @@ class CartShow extends React.Component {
                                                 <div className="total"><span>Item(s) total:</span><span>${total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</span></div>
                                                 <button className="checkout-btn">Proceed to checkout</button>
                                             </>
-        const len = this.props.items.length;
+        const len = items.length;
         const headerMsg = len === 0 ? "Your cart is empty." : `${len} items in your cart.`;
         const cls = len === 0 ? "no-payment" : "payment-box";
         return (
@@ -55,7 +56,7 @@ class CartShow extends React.Component {
                         </div>
                         <div className="item-container">
                            <ul>
-                                {items}
+                                {cartItems}
                            </ul>
                         </div>
 
