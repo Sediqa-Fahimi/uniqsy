@@ -23,8 +23,7 @@ class Modal extends React.Component{
 
     render(){
         const transition = this.state.modalTransitioning ? "-reverse" : "";
-        const modal = this.props.modal;
-        const closeModal = this.props.closeModal;
+        const { modal } = this.props;
         if (!modal) {
             return null;
         }
