@@ -16,8 +16,8 @@ class ProductShow extends React.Component{
 
     }
     componentDidMount(){
-        const productId = this.props.productId;
-        this.props.fetchProduct(productId);
+        const {productId, fetchProduct} = this.props;
+        fetchProduct(productId);
     }
   
     handleClick(e){
