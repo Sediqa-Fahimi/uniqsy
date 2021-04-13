@@ -41,18 +41,20 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const { processForm, closeModal, fetchCartItems } = this.props;
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal).then(this.props.fetchCartItems);
+        processForm(user).then(closeModal).then(fetchCartItems);
     }
 
     handleGuest(e){
         e.preventDefault();
+        const { login, closeModal, fetchCartItems } = this.props;
         const guestUser = {
             email: 'myguest@test.com',
             first_name: 'Guest',
             password: 'quietgame51'
         };
-        this.props.login(guestUser).then(this.props.closeModal).then(this.props.fetchCartItems);
+        login(guestUser).then(closeModal).then(fetchCartItems);
     }
 
     render() {
