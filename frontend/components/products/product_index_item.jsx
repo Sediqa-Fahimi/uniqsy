@@ -7,8 +7,9 @@ class ProductIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(e) {
-      const productId = this.props.product.id;
-      this.props.history.push(`/products/${productId}`);
+      const {product, history} = this.props;
+      const productId = product.id;
+      history.push(`/products/${productId}`);
   }
     render() {
         const { product } = this.props;
