@@ -58,14 +58,15 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const title = this.props.formType === 'Sign in' ? "Sign in" : "Create your account";
-        const subtitle = this.props.formType === 'Sign in' ? "" : "Registration is easy.";
-        const clssNam = this.props.formType === 'Sign in' ? "login-form-container" : "signup-form-container";
-        const err1 = this.props.errors[0];
-        const err2 = this.props.errors[1];
-        const err3 = this.props.formType === 'Sign in' ? this.props.errors[0] : this.props.errors[2];
-        const inptClsNam = this.props.errors.length === 0 ? "login-input" : "errored-input";
-        const fName = this.props.formType === 'Register' ? (
+        const {formType, errors, otherForm } = this.props;
+        const title = formType === 'Sign in' ? "Sign in" : "Create your account";
+        const subtitle = formType === 'Sign in' ? "" : "Registration is easy.";
+        const clssNam = formType === 'Sign in' ? "login-form-container" : "signup-form-container";
+        const err1 = errors[0];
+        const err2 = errors[1];
+        const err3 = formType === 'Sign in' ? errors[0] : errors[2];
+        const inptClsNam = errors.length === 0 ? "login-input" : "errored-input";
+        const fName = formType === 'Register' ? (
             <label>First name
                 <div>
                     <input type="text" value={this.state.first_name} 
@@ -81,7 +82,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form-header">
                         <h2>{title}</h2>
-                        {this.props.otherForm}
+                        {otherForm}
                     </div>
                     <h3>{subtitle}</h3>
                     <div className="login-form">
@@ -116,7 +117,7 @@ class SessionForm extends React.Component {
                         </div>
                         <p>{err3}</p>
                         <div>
-                            <button type="submit" className="session-submit" value={this.props.formType}>{this.props.formType}</button>
+                            <button type="submit" className="session-submit" value={formType}>{formType}</button>
                         </div>
                         <div>
                             <span>OR</span>
