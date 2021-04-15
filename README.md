@@ -153,4 +153,5 @@ end
 \> npm install  
 \> npm run webpack  
 \> rails s
+view the site on localhost:3000
 
