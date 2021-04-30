@@ -142,6 +142,7 @@ class ProductIndex extends React.Component{
                     
                         <a href="https://www.linkedin.com/in/sediqafahimi/">Linkedin</a>
                         <a href="https://github.com/Sediqa-Fahimi">GitHub</a>
+                        <a href="https://sediqa-fahimi.github.io/">Portfolio</a>
                     </div>
 
                     <img src={window.blueCircleURL} alt="" className="blue-circle-png" />
