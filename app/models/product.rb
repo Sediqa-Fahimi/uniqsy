@@ -38,6 +38,6 @@ class Product < ApplicationRecord
     end
 
     def total_reviews
-        reviews.count
+        reviews.length
     end
 end
