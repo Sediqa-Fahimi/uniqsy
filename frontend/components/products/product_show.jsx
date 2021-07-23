@@ -105,7 +105,7 @@ class ProductShow extends React.Component{
                     </div>
                     <div className="col col-1-3">
                         <aside className="aside">
-                            <p>{product.seller.first_name}</p>
+                            <p>Sold by: {product.seller.first_name}</p>
                             <h1>{product.title}</h1>
                             <p>${product.price}</p>
                             <span>Qty:</span>
