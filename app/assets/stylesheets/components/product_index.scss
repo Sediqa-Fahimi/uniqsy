@@ -88,9 +88,12 @@
 
 .listing-reviews{
     display: flex;
-    >span:nth-child(2){
+    justify-content: baseline;
+    >p:nth-child(2){
         color: rgb(117,117,117);
-        margin-left: 5px;
+        margin-left: 4px;
+        font-size: 14px;
+        font-weight: normal;
     }
 }
 

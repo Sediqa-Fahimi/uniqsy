@@ -36,7 +36,7 @@ class ProductIndexItem extends React.Component {
                     })
                     }
                   </span>
-                  <span>({product.totalReviews})</span>
+                  <p>({product.totalReviews})</p>
                 </div>
                 ${product.price}
               </Link>
