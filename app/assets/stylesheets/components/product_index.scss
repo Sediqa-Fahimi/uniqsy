@@ -85,6 +85,15 @@
     box-sizing: border-box;
     object-fit: fill;
 }
+
+.listing-reviews{
+    display: flex;
+    >span:nth-child(2){
+        color: rgb(117,117,117);
+        margin-left: 5px;
+    }
+}
+
 .hand-picked{
     // border: 1px solid red;
     width: 1400px;
