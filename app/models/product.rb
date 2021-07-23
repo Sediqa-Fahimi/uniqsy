@@ -36,4 +36,8 @@ class Product < ApplicationRecord
     def average_rating
         reviews.average(:rating)
     end
+
+    def total_reviews
+        reviews.length
+    end
 end
